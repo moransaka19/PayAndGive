@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {}
+    "D:\\Project\\pay_and_give\\Server\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
+    "D:\\Project\\pay_and_give\\Server\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Project\\pay_and_give\\Server\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Project\\pay_and_give\\Server\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\DuckKick\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\pay_and_give\\server\\Domain\\obj\\",
+        "outputPath": "D:\\Project\\pay_and_give\\Server\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DuckKick\\AppData\\Roaming\\NuGet\\NuGet.Config",

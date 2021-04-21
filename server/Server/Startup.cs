@@ -38,6 +38,8 @@ namespace Server
 
             services.Configure<AuthOptions>(authOptionsConfiguration);
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(option =>
                 {
@@ -58,6 +60,7 @@ namespace Server
                         //RoleClaimType = "role"
                     };
                 });
+            services.AddControllers();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -74,14 +77,17 @@ namespace Server
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
+
             app.UseRouting();
+
+            app.UseAuthentication();
+            
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
         }
     }
