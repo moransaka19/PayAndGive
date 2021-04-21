@@ -1,0 +1,9 @@
+D:\Project\pay_and_give\server\Domain\bin\Debug\netstandard2.0\Domain.deps.json
+D:\Project\pay_and_give\server\Domain\bin\Debug\netstandard2.0\Domain.dll
+D:\Project\pay_and_give\server\Domain\bin\Debug\netstandard2.0\Domain.pdb
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.dll
+D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.pdb

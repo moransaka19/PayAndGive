@@ -1,0 +1,12 @@
+D:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\Domain.dll
+D:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.csprojAssemblyReference.cache
+D:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.AssemblyInfoInputs.cache
+D:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.AssemblyInfo.cs
+D:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.csproj.CoreCompileInputs.cache
+d:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\DAL.deps.json
+d:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\DAL.dll
+d:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\DAL.pdb
+d:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\Domain.pdb
+d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.csproj.CopyComplete
+d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.dll
+d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.pdb

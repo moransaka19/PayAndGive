@@ -1,0 +1,14 @@
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.csprojAssemblyReference.cache
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.AssemblyInfoInputs.cache
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.AssemblyInfo.cs
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.csproj.CoreCompileInputs.cache
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\BLL.deps.json
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\BLL.dll
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\BLL.pdb
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\DAL.dll
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\Domain.dll
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\DAL.pdb
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\Domain.pdb
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.csproj.CopyComplete
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.dll
+d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.pdb
