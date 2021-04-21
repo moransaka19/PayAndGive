@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OrPYFCuqzxSLV2UB8HEPlFGffs6pL9VKP7sAIjAAWy24JYmGJ312Bs86M2+XJgoiQzFwcViCQoRFXtxN1aVKWg==",
+  "dgSpecHash": "DVm0oCZvWSAit2YBqE5oRP7VPsWq+4xKru6z35vqlx0G7kifcAX2ULd5JvTxbrPq5CJfxuypHubellA+zKB/sg==",
   "success": true,
   "projectFilePath": "d:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "U4VhTWAZGudNvGe9azBAEorUvp2qHEnhMoGVvXBTVeN94yH16ihfneAbOzxQp/7HtHvFLmi95Euu2+SSwDqlbg==",
+  "dgSpecHash": "wiDc5r2Tl8p7BgEAa4r18n5SK0xzblkWoHe5JbF5agtNVWD+wlP/nhzQ1nruIsqrvY5PGSDsJDqGgGO0gycy4w==",
   "success": true,
   "projectFilePath": "d:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

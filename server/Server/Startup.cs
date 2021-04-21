@@ -1,4 +1,5 @@
 using AuthOption;
+using Autofac;
 using DAL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Server
@@ -56,6 +58,12 @@ namespace Server
                         //RoleClaimType = "role"
                     };
                 });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            DAL.Bootstrapper.Bootstrap(builder);
+            BLL.Bootstrapper.Bootstrap(builder);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

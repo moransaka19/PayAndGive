@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ncbwg1Bo1ngAP4N66d7fSktpGtlmxgE+f/ds1ZIBeIUCq0Z5mZ2z1z94v8nHjrutY1f3Tw++XV4KDX+jgZglXw==",
+  "dgSpecHash": "Em4Y4Z4kJhFwvfJLwoS6LRujZ1ditNVarsqGkpSFkRnmXl/K4XfNZkn8KJoG9BoGUibHgixDZYoVKfn9BNe2nA==",
   "success": true,
   "projectFilePath": "d:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
