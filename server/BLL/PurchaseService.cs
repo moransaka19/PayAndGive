@@ -25,7 +25,7 @@ namespace BLL
         {
             var totalCost = containers.Select(c => c.Eat.Price).Sum();
             customer.Money = customer.Money - totalCost;
-            var eatList = containers.Select(c => c.Eat);
+            var eatList = containers.Select(c => c.Eat).ToList();
             _userRepository.Update(customer);
 
             _receiptRepository.Add(new Receipt

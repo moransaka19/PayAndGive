@@ -14,7 +14,7 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>().HasData(new []
+            modelBuilder.Entity<Role>().HasData(new[]
             {
                 new Role
                 {
@@ -44,6 +44,49 @@ namespace DAL
                     Name = "Test",
                     Money = 100,
                     RoleId = 2
+                }
+            });
+            modelBuilder.Entity<Machine>().HasData(new[]
+            {
+                new Machine
+                {
+                    Id = 1,
+                    State = "test"
+                }
+            });
+            modelBuilder.Entity<MachineContainer>().HasData(new[]
+            {
+                new MachineContainer
+                {
+                    Id = 1,
+                    MachineId = 1,
+                    IsEmpty = false,
+                    EatId = 2
+                },
+                new MachineContainer
+                {
+                    Id = 2,
+                    MachineId = 1,
+                    IsEmpty = false,
+                    EatId = 1
+                }
+            });
+
+            modelBuilder.Entity<Eat>().HasData(new[]{
+
+                new Eat
+                {
+                    Id = 2,
+                    Name ="Eat2",
+                    Price = 2,
+                    TimeExpiredMin = 5
+                },
+                new Eat 
+                {
+                    Id = 1,
+                    Name = "Eat1",
+                    Price = 10,
+                    TimeExpiredMin = 10
                 }
             });
 
