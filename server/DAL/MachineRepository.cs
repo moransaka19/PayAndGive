@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.Interfaces
 {
-    public class MachineRepository : BaseRepository<Machine>, IMachineRepository
+    public class MachineRepository : BaseRepository<Machine>
     {
         public MachineRepository(ApplicationDbContext context) : base(context)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.Interfaces
 {
-    public class EatRepository : BaseRepository<Eat>, IEatRepository
+    public class EatRepository : BaseRepository<Eat>
     {
         public EatRepository(ApplicationDbContext context) : base(context)
         {

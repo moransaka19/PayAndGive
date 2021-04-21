@@ -1,5 +1,5 @@
-﻿using BLL.Interfaces;
-using Common;
+﻿using Common;
+using DAL;
 using DAL.Interfaces;
 using Domain;
 using System;
@@ -11,14 +11,14 @@ using System.Web.Helpers;
 
 namespace BLL
 {
-    public class UserService : IUserService
+    public class UserService
     {
 
-        private readonly IUserRepository _userRepository;
-        private readonly IRoleRepository _roleRepository;
+        private readonly UserRepository _userRepository;
+        private readonly RoleRepository _roleRepository;
 
-        public UserService(IUserRepository userRepository,
-            IRoleRepository roleRepository)
+        public UserService(UserRepository userRepository,
+            RoleRepository roleRepository)
         {
             _userRepository = userRepository;
             _roleRepository = roleRepository;

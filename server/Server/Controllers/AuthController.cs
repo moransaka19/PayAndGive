@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BLL.Interfaces;
+using BLL;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,12 +17,12 @@ namespace Server
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IUserService _userService;
-        private readonly ITokenService _tokenService;
+        private readonly UserService _userService;
+        private readonly TokenService _tokenService;
         private readonly IMapper _mapper;
 
-        public AuthController(IUserService userService,
-            ITokenService tokenService,
+        public AuthController(UserService userService,
+            TokenService tokenService,
             IMapper mapper)
         {
             _userService = userService;

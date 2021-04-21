@@ -1,5 +1,5 @@
 ﻿using AuthOption;
-using BLL.Interfaces;
+using DAL;
 using DAL.Interfaces;
 using Domain;
 using Microsoft.Extensions.Options;
@@ -12,14 +12,14 @@ using System.Security.Claims;
 
 namespace BLL
 {
-    public class TokenService : ITokenService
+    public class TokenService
     {
 
         private readonly IOptions<AuthOptions> _authOpions;
-        private readonly IRoleRepository _roleRepository;
+        private readonly RoleRepository _roleRepository;
 
         public TokenService(IOptions<AuthOptions> authOpions,
-            IRoleRepository roleRepository)
+            RoleRepository roleRepository)
         {
             _authOpions = authOpions;
             _roleRepository = roleRepository;

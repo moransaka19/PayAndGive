@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DAL
 {
-    public class RoleRepository : BaseRepository<Role>, IRoleRepository
+    public class RoleRepository : BaseRepository<Role>
     {
         public RoleRepository(ApplicationDbContext context) : base(context)
         {
