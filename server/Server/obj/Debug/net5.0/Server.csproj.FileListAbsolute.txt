@@ -64,3 +64,9 @@ d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Auth
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Common.pdb
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Autofac.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Web.Razor.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Web.Helpers.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Web.WebPages.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll

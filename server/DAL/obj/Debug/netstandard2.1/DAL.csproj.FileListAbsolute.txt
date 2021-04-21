@@ -10,3 +10,5 @@ d:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\Domain.pdb
 d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.csproj.CopyComplete
 d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.dll
 d:\Project\pay_and_give\server\DAL\obj\Debug\netstandard2.1\DAL.pdb
+D:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\Common.dll
+D:\Project\pay_and_give\server\DAL\bin\Debug\netstandard2.1\Common.pdb
