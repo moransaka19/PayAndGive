@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{9A42218C-C8C6-4B3F-A84A-7D7949AF7042}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "AuthOption\Common.csproj", "{1C0EE144-80C5-4E63-966D-6C2712D57A4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9A42218C-C8C6-4B3F-A84A-7D7949AF7042}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A42218C-C8C6-4B3F-A84A-7D7949AF7042}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A42218C-C8C6-4B3F-A84A-7D7949AF7042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0EE144-80C5-4E63-966D-6C2712D57A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0EE144-80C5-4E63-966D-6C2712D57A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0EE144-80C5-4E63-966D-6C2712D57A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0EE144-80C5-4E63-966D-6C2712D57A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

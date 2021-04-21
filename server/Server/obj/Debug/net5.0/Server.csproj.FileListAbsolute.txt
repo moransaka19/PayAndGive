@@ -23,7 +23,6 @@ d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.IdentityModel.L
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Newtonsoft.Json.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\System.Runtime.Caching.dll
@@ -60,3 +59,6 @@ d:\Project\pay_and_give\server\Server\obj\Debug\net5.0\Server.dll
 d:\Project\pay_and_give\server\Server\obj\Debug\net5.0\ref\Server.dll
 d:\Project\pay_and_give\server\Server\obj\Debug\net5.0\Server.pdb
 d:\Project\pay_and_give\server\Server\obj\Debug\net5.0\Server.genruntimeconfig.cache
+d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Common.dll
+d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+d:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Common.pdb

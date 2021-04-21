@@ -9,5 +9,6 @@ namespace Domain
         public string Password { get; set; }
         public decimal Money { get; set; }
         public Role Role { get; set; }
+        public int RoleId { get; set; }
     }
 }

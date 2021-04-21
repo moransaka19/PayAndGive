@@ -12,3 +12,5 @@ d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\Domain.pdb
 d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.csproj.CopyComplete
 d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.dll
 d:\Project\pay_and_give\server\BLL\obj\Debug\netstandard2.1\BLL.pdb
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\Common.dll
+d:\Project\pay_and_give\server\BLL\bin\Debug\netstandard2.1\Common.pdb

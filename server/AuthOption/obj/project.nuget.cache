@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "yaULKLtGbuM7MdAjewTe8/P16ZqrWxlK8NgaSqg4+aXJjmtI/aB1G9okjJlHc6s85Nx5JOR6/DizJzrPPMfHNQ==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.2\\microsoft.identitymodel.logging.6.10.2.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.2\\microsoft.identitymodel.tokens.6.10.2.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

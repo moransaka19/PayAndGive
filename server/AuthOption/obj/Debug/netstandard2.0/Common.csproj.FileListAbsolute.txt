@@ -1,0 +1,9 @@
+D:\Project\pay_and_give\server\AuthOption\bin\Debug\netstandard2.0\Common.deps.json
+D:\Project\pay_and_give\server\AuthOption\bin\Debug\netstandard2.0\Common.dll
+D:\Project\pay_and_give\server\AuthOption\bin\Debug\netstandard2.0\Common.pdb
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.dll
+D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.pdb
