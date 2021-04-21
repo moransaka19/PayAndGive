@@ -55,6 +55,6 @@ namespace DAL
         public DbSet<Machine> Machines { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
-        public DbSet<MContainer> MContainers { get; set; }
+        public DbSet<MachineContainer> MContainers { get; set; }
     }
 }

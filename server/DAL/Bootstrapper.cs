@@ -12,7 +12,7 @@ namespace DAL
         {
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .Where(x => x.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces()
+                .AsSelf()
                 .InstancePerDependency();
         }
     }

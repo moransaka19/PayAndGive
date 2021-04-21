@@ -12,7 +12,7 @@ namespace BLL
         {
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .Where(x => x.Name.EndsWith("Service"))
-                .AsImplementedInterfaces()
+                .AsSelf()
                 .InstancePerDependency();
         }
     }

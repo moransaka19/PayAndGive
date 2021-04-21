@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain
 {
-    public class MContainer : BaseEntity
+    public class MachineContainer : BaseEntity
     {
         public DateTime FixedLoadingTime { get; set; }
         public bool IsEmpty { get; set; }

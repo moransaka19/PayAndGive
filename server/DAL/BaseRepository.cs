@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DAL
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
+    public class BaseRepository<T> where T : BaseEntity
     {
         protected readonly ApplicationDbContext context;
         protected virtual IQueryable<T> baseQuery => context.Set<T>();
@@ -25,6 +25,12 @@ namespace DAL
         public virtual void Delete(T item)
         {
             context.Remove(item);
+            context.SaveChanges();
+        }
+
+        public virtual void Update(T item)
+        {
+            context.Entry<T>(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
         }
 
