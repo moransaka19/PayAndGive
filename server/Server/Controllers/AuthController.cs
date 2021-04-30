@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models;
+using Server.Models.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Server
             _mapper = mapper;
         }
 
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [HttpPost("registration")]
         public IActionResult Registration([FromBody] RegisterModel model)
         {
@@ -51,6 +52,32 @@ namespace Server
             }
 
             var user = _userService.Register(model.Login, model.Name, model.Password, model.Role);
+            var accessToken = new AccessToken() { Token = _tokenService.GenerateJwtToken(user) };
+
+            return Ok(accessToken);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("registration-user")]
+        public IActionResult RegistrationUser([FromBody] RegisterUserModel model)
+        {
+            if (_userService.IsLoginTaken(model.Login))
+            {
+                return BadRequest(new ErrorMessageModel()
+                {
+                    Message = "Login is taken"
+                });
+            }
+
+            if (_userService.IsNameTaken(model.Name))
+            {
+                return BadRequest(new ErrorMessageModel()
+                {
+                    Message = "Name is taken"
+                });
+            }
+
+            var user = _userService.Register(model.Login, model.Name, model.Password, Common.RoleEnum.Customer);
             var accessToken = new AccessToken() { Token = _tokenService.GenerateJwtToken(user) };
 
             return Ok(accessToken);

@@ -31,12 +31,11 @@ namespace Server
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            var authOptionsConfiguration = Configuration.GetSection("Auth");
             var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.Configure<AuthOptions>(authOptionsConfiguration);
+            services.AddSingleton(authOptions);
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

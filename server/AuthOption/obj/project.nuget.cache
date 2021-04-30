@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AEUya5i49rzPWF9S9t0o0/s/K/KcrWt/dCcGv9TSoNUV3LSEI27R+b475RXOlK51cKY0QH8WqqtKkTmFQ36R9w==",
+  "dgSpecHash": "yaULKLtGbuM7MdAjewTe8/P16ZqrWxlK8NgaSqg4+aXJjmtI/aB1G9okjJlHc6s85Nx5JOR6/DizJzrPPMfHNQ==",
   "success": true,
-  "projectFilePath": "D:\\Project\\pay_and_give\\Server\\AuthOption\\Common.csproj",
+  "projectFilePath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.2\\microsoft.identitymodel.logging.6.10.2.nupkg.sha512",

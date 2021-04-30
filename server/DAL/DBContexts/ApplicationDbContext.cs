@@ -42,7 +42,7 @@ namespace DAL
                     Login = "Test",
                     Password = "",
                     Name = "Test",
-                    Money = 100,
+                    Money = 1000,
                     RoleId = 2
                 }
             });
