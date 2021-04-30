@@ -39,11 +39,10 @@ namespace DAL
                 new User
                 {
                     Id = 1,
-                    Login = "Test",
-                    Password = "",
-                    Name = "Test",
-                    Money = 1000,
-                    RoleId = 2
+                    Login = "Admin",
+                    Password = "ACyBeIkSb0oWhRvS0Wd3lVwbcRi+OO8jO968vxtmub0WYRDUA6CuUxB4PStpoO5+TA==",
+                    Name = "Admin",
+                    RoleId = 1
                 }
             });
             modelBuilder.Entity<Machine>().HasData(new[]
@@ -51,7 +50,8 @@ namespace DAL
                 new Machine
                 {
                     Id = 1,
-                    State = "test"
+                    State = "test",
+                    Value = 20
                 }
             });
             modelBuilder.Entity<MachineContainer>().HasData(new[]

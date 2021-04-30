@@ -7,6 +7,7 @@ namespace Domain
     public class Machine : BaseEntity
     {
         public string State { get; set; }
+        public int Value { get; set; }
         public IEnumerable<MachineContainer> MachineContainers { get; set; }
 
         public Machine()

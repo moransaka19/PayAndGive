@@ -1,15 +1,17 @@
 ﻿using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DAL.Interfaces
 {
     public class MachineRepository : BaseRepository<Machine>
     {
+        protected override IQueryable<Machine> baseQuery => base.baseQuery.Include(m => m.MachineContainers);
         public MachineRepository(ApplicationDbContext context) : base(context)
         {
-
         }
     }
 }

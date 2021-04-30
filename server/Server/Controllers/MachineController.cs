@@ -1,5 +1,7 @@
-﻿using BLL;
+﻿using AutoMapper;
+using BLL;
 using DAL.Interfaces;
+using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models.Machine;
 using System;
@@ -10,24 +12,45 @@ using System.Threading.Tasks;
 namespace Server.Controllers
 {
 
-    [Route("api/machine")]
+    [Route("api/machines/{id}")]
     public class MachineController : Controller
     {
         private readonly PurchaseService _purchaseService;
         private readonly UserRepository _userRepository;
         private readonly MachineContainerRepository _machineContainerRepository;
         private readonly MachineRepository _machineRepository;
+        private readonly IMapper _mapper;
 
         public MachineController(PurchaseService purchaseService,
             UserRepository userRepository,
             MachineContainerRepository machineContainerRepository,
-            MachineRepository machineRepository)
+            MachineRepository machineRepository,
+            IMapper mapper)
         {
             _purchaseService = purchaseService;
             _userRepository = userRepository;
             _machineContainerRepository = machineContainerRepository;
             _machineRepository = machineRepository;
+            _mapper = mapper;
         }
+
+        [HttpGet]
+        public IActionResult GetMachineById(int id)
+        {
+            var machine = _machineRepository.GetById(id);
+
+            return Ok(machine);
+        }
+
+        [HttpPost]
+        public IActionResult AddMachine(AddMachineModel model)
+        {
+            var machine = _mapper.Map<Machine>(model);
+            _machineRepository.Add(machine);
+
+            return Ok();
+        }
+
 
         [HttpPost("make-purchase")]
         public IActionResult MakePurchase([FromBody] MachineContainerListModel model)

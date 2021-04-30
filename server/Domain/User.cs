@@ -7,7 +7,7 @@ namespace Domain
         public String Name { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public decimal Money { get; set; }
+        public decimal? Money { get; set; }
         public Role Role { get; set; }
         public int RoleId { get; set; }
     }
