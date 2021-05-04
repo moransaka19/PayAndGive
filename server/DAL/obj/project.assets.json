@@ -7317,11 +7317,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
+      "projectUniqueName": "d:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
+      "projectPath": "d:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\DuckKick\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\pay_and_give\\server\\DAL\\obj\\",
+      "outputPath": "d:\\Project\\pay_and_give\\server\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DuckKick\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7338,11 +7338,11 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
-              "projectPath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj"
+            "d:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
+              "projectPath": "d:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj"
             },
-            "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj"
+            "d:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
+              "projectPath": "d:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj"
             }
           }
         }
