@@ -15,10 +15,10 @@ namespace BLL
     public class TokenService
     {
 
-        private readonly IOptions<AuthOptions> _authOpions;
+        private readonly AuthOptions _authOpions;
         private readonly RoleRepository _roleRepository;
 
-        public TokenService(IOptions<AuthOptions> authOpions,
+        public TokenService(AuthOptions authOpions,
             RoleRepository roleRepository)
         {
             _authOpions = authOpions;
@@ -28,8 +28,7 @@ namespace BLL
 
         public string GenerateJwtToken(User user)
         {
-            var authParams = _authOpions.Value;
-            var securityKey = authParams.GetSymmetricSecurityKey();
+            var securityKey = _authOpions.GetSymmetricSecurityKey();
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>()
@@ -43,10 +42,10 @@ namespace BLL
                 .Where(role => user.Role.Id == role.Id).ToList()
                 .Select(role => new Claim("role", role.Name)));
 
-            var token = new JwtSecurityToken(authParams.Issuer,
-                authParams.Audience,
+            var token = new JwtSecurityToken(_authOpions.Issuer,
+                _authOpions.Audience,
                 claims,
-                expires: DateTime.Now.AddSeconds(authParams.TokenLifeTime),
+                expires: DateTime.Now.AddSeconds(_authOpions.TokenLifeTime),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

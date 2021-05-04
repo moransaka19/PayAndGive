@@ -7,3 +7,12 @@ D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.AssemblyIn
 D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
 D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.dll
 D:\Project\pay_and_give\server\Domain\obj\Debug\netstandard2.0\Domain.pdb
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\bin\Debug\netstandard2.0\Domain.deps.json
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\bin\Debug\netstandard2.0\Domain.dll
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\bin\Debug\netstandard2.0\Domain.pdb
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.dll
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Domain\obj\Debug\netstandard2.0\Domain.pdb

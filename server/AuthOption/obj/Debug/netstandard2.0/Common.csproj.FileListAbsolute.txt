@@ -7,3 +7,12 @@ D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.Assemb
 D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
 D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.dll
 D:\Project\pay_and_give\server\AuthOption\obj\Debug\netstandard2.0\Common.pdb
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\bin\Debug\netstandard2.0\Common.deps.json
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\bin\Debug\netstandard2.0\Common.dll
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.dll
+C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\AuthOption\obj\Debug\netstandard2.0\Common.pdb

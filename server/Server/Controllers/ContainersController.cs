@@ -29,7 +29,7 @@ namespace Server.Controllers
             _machineService = machineService;
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetContainerById(int id)
         {
             var container = _machineContainerRepository.GetById(id);
