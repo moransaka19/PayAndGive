@@ -33,13 +33,14 @@ namespace BLL
 
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Name)
             };
 
             var roles = _roleRepository.GetAll();
 
             claims.AddRange(roles
-                .Where(role => user.Role.Id == role.Id).ToList()
+                .Where(role => user.RoleId == role.Id).ToList()
                 .Select(role => new Claim("role", role.Name)));
 
             var token = new JwtSecurityToken(_authOpions.Issuer,

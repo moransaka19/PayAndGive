@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, startWith } from 'rxjs/operators';
+import { parseJwt } from '../helpers/parse-jwt';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,8 @@ import { filter, startWith } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
 
   authenticated: boolean;
+  name: string;
+  isAdmin: boolean;
 
   constructor(private router: Router) { }
 
@@ -18,7 +21,11 @@ export class HeaderComponent implements OnInit {
       filter(x => x instanceof NavigationEnd),
       startWith(false)
     )
-      .subscribe(() => this.authenticated = !!localStorage.getItem('token'));
+      .subscribe(() => {
+        this.authenticated = !!localStorage.getItem('token');
+        this.name = this.authenticated && parseJwt(localStorage.getItem('token')).unique_name;
+        this.isAdmin = this.authenticated && parseJwt(localStorage.getItem('token')).role === 'Admin';
+      });
   }
 
   onLogout() {

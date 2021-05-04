@@ -6,8 +6,8 @@ namespace Common
 {
     public enum RoleEnum
     {
-        Admin, 
-        Customer,
-        Operator
+        Admin = 1,
+        Customer = 2,
+        Operator = 3
     }
 }

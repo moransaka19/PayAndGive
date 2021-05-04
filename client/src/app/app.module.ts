@@ -6,14 +6,17 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './header/header.component'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { RegisterComponent } from './register/register.component'
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,11 @@ import { HeaderComponent } from './header/header.component'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

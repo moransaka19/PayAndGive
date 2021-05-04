@@ -31,7 +31,7 @@ namespace Server
             _mapper = mapper;
         }
 
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         [HttpPost("registration")]
         public IActionResult Registration([FromBody] RegisterModel model)
         {
@@ -51,33 +51,7 @@ namespace Server
                 });
             }
 
-            var user = _userService.Register(model.Login, model.Name, model.Password, model.Role);
-            var accessToken = new AccessToken() { Token = _tokenService.GenerateJwtToken(user) };
-
-            return Ok(accessToken);
-        }
-
-        [AllowAnonymous]
-        [HttpPost("registration-user")]
-        public IActionResult RegistrationUser([FromBody] RegisterUserModel model)
-        {
-            if (_userService.IsLoginTaken(model.Login))
-            {
-                return BadRequest(new ErrorMessageModel()
-                {
-                    Message = "Login is taken"
-                });
-            }
-
-            if (_userService.IsNameTaken(model.Name))
-            {
-                return BadRequest(new ErrorMessageModel()
-                {
-                    Message = "Name is taken"
-                });
-            }
-
-            var user = _userService.Register(model.Login, model.Name, model.Password, Common.RoleEnum.Customer);
+            var user = _userService.Register(model.Login, model.Name, model.Password, model.Role);  
             var accessToken = new AccessToken() { Token = _tokenService.GenerateJwtToken(user) };
 
             return Ok(accessToken);
