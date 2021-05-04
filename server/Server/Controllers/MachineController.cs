@@ -44,7 +44,7 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public IActionResult GetMachineById(int id)
         {
-            var machine = _machineRepository.GetById(id);
+            var machine = _mapper.Map<MachineModel>(_machineRepository.GetById(id));
 
             return Ok(machine);
         }

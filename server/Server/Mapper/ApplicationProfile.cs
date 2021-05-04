@@ -30,7 +30,11 @@ namespace Server.Mapper
                 .ReverseMap();
 
             CreateMap<Machine, MachineModel>()
-                .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers.Count()));
+                .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers));
+
+            CreateMap<MachineContainer, ContainerModel>();
+
+            CreateMap<Eat, EatModel>();
         }
     }
 }

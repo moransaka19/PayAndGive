@@ -1,0 +1,29 @@
+<ng-container *ngIf="machine$ | async as machine">
+    <h2>Id: {{machine.id}}</h2>
+
+    <div><b>State: </b> {{machine.state}}</div>
+    <div><b>Value: </b> {{machine.value}}</div>
+
+    <div>Containers: </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Eat</th>
+                <th scope="col">Price</th>
+                <th scope="col">Fixed Loading Time</th>
+                <th scope="col">Empty</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let machine of machine.containers">
+                <th scope="row">{{machine.id}}</th>
+                <td>{{machine.eat.name}}</td>
+                <td>{{machine.eat.price}}</td>
+                <td>{{machine.fixedLoadingTime}}</td>
+                <td>{{machine.isEmpty}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

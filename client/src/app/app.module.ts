@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './register/register.component'
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { MachinesComponent } from './machines/machines.component';
+import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MachinesComponent } from './machines/machines.component';
     LoginComponent,
     HeaderComponent,
     RegisterComponent,
-    MachinesComponent
+    MachinesComponent,
+    MachineDetailsComponent
   ],
   imports: [
     BrowserModule,

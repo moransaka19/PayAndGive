@@ -1,4 +1,6 @@
-<table class="table">
+<h3>Machines</h3>
+
+<table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -8,11 +10,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let machine of machines$ | async">
+      <tr style="cursor: pointer" *ngFor="let machine of machines$ | async" routerLink="/machines/{{machine.id}}">
         <th scope="row">{{machine.id}}</th>
         <td>{{machine.state}}</td>
         <td>{{machine.value}}</td>
-        <td>{{machine.containers}}</td>
+        <td>{{machine.containers.length}}</td>
       </tr>
     </tbody>
   </table>

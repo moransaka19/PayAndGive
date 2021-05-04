@@ -9,7 +9,9 @@ namespace DAL.Interfaces
 {
     public class MachineRepository : BaseRepository<Machine>
     {
-        protected override IQueryable<Machine> baseQuery => base.baseQuery.Include(m => m.MachineContainers);
+        protected override IQueryable<Machine> baseQuery => base.baseQuery
+            .Include(m => m.MachineContainers)
+            .ThenInclude(x => x.Eat);
         public MachineRepository(ApplicationDbContext context) : base(context)
         {
         }
