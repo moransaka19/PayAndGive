@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
-
-    [Route("api/machines/{id}")]
+    [Route("api/machines")]
     public class MachineController : Controller
     {
         private readonly PurchaseService _purchaseService;
@@ -35,6 +34,14 @@ namespace Server.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetMachines()
+        {
+            var machines = _mapper.Map<IEnumerable<MachineModel>>(_machineRepository.GetAll());
+
+            return Ok(machines);
+        }
+
+        [HttpGet("{id}")]
         public IActionResult GetMachineById(int id)
         {
             var machine = _machineRepository.GetById(id);
@@ -42,7 +49,7 @@ namespace Server.Controllers
             return Ok(machine);
         }
 
-        [HttpPost]
+        [HttpPost("{id}")]
         public IActionResult AddMachine(AddMachineModel model)
         {
             var machine = _mapper.Map<Machine>(model);
@@ -52,7 +59,7 @@ namespace Server.Controllers
         }
 
 
-        [HttpPost("make-purchase")]
+        [HttpPost("{id}/make-purchase")]
         public IActionResult MakePurchase([FromBody] MachineContainerListModel model)
         {
             var machine = _machineRepository.GetById(model.MachineId);
@@ -65,7 +72,7 @@ namespace Server.Controllers
             return Ok();
         }
 
-        [HttpPost("load-containers")]
+        [HttpPost("{id}/load-containers")]
         public IActionResult LoadContainer([FromBody] MachineLoadContainer model)
         {
             var containsers = model.ContainersId.Select(ci => _machineContainerRepository.GetById(ci));

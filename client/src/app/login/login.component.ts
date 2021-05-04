@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.http.post(`${environment.apiUrl}/auth/login`, this.form.value)
       .subscribe(({ token }: { token: string }) => {
         localStorage.setItem('token', token);
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('machines');
       });
   }
 }

@@ -28,6 +28,9 @@ namespace Server.Mapper
                 .ReverseMap();
             CreateMap<AddReceiptModel, Receipt>()
                 .ReverseMap();
+
+            CreateMap<Machine, MachineModel>()
+                .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers.Count()));
         }
     }
 }

@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">State</th>
+        <th scope="col">Value</th>
+        <th scope="col">Containers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let machine of machines$ | async">
+        <th scope="row">{{machine.id}}</th>
+        <td>{{machine.state}}</td>
+        <td>{{machine.value}}</td>
+        <td>{{machine.containers}}</td>
+      </tr>
+    </tbody>
+  </table>

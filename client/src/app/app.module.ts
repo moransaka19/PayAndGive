@@ -10,13 +10,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { RegisterComponent } from './register/register.component'
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { MachinesComponent } from './machines/machines.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    MachinesComponent
   ],
   imports: [
     BrowserModule,

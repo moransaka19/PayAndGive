@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('token', token);
         }
 
-        setTimeout(() => this.router.navigateByUrl(''), 50);
+        setTimeout(() => this.router.navigateByUrl('machines'), 50);
       });
   }
 }
