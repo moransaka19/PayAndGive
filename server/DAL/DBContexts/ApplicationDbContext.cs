@@ -40,7 +40,7 @@ namespace DAL
                 {
                     Id = 1,
                     Login = "Admin",
-                    Password = "ACyBeIkSb0oWhRvS0Wd3lVwbcRi+OO8jO968vxtmub0WYRDUA6CuUxB4PStpoO5+TA==",
+                    Password = "ADGjgVNFqMy8qsaVNwuhPyW96mam0F6+zuAgkLjiNTc7YFfz4zoo4YWk7qnFTCciPg==",
                     Name = "Admin",
                     RoleId = 1
                 }
