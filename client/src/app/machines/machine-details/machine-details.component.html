@@ -4,7 +4,9 @@
     <div><b>State: </b> {{machine.state}}</div>
     <div><b>Value: </b> {{machine.value}}</div>
 
-    <button class="btn btn-success" routerLink="./add-container">Add container</button>
+    <button class="btn btn-success" routerLink="./add-container" *ngIf="machine.containers.length < machine.value">
+        Add container
+    </button>
 
     <div>Containers: </div>
 
