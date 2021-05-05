@@ -18,6 +18,8 @@ using System.Threading.Tasks;
 
 namespace Server
 {
+    using System.Text.Json.Serialization;
+
     public class Startup
     {
         public IConfiguration Configuration { get; }
@@ -71,7 +73,10 @@ namespace Server
                         //RoleClaimType = "role"
                     };
                 });
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
 
             services.AddSwaggerGen();
         }
