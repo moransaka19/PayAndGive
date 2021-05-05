@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,6 +11,8 @@ import { environment } from 'src/environments/environment';
 })
 export class AddContainerComponent implements OnInit {
 
+  eats$: Observable<any>;
+
   form: FormGroup;
 
   constructor(private http: HttpClient,
@@ -17,11 +20,13 @@ export class AddContainerComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.eats$ = this.http.get(`${environment.apiUrl}/eats`);
+
     this.form = new FormGroup({
       fixedLoadingTime: new FormControl(),
       isEmpty: new FormControl(false),
       machineId: new FormControl(this.route.snapshot.params.id),
-      eatId: new FormControl(1)
+      eatId: new FormControl()
     });
   }
 

@@ -8,7 +8,13 @@
 
     <div class="input-group mb-3">
         Fixed Loading Time: 
-        <input type="date" formControlName="fixedLoadingTime" name="trip-start">
+        <input required type="datetime-local" formControlName="fixedLoadingTime" name="trip-start">
+    </div>
+
+    <div class="form-group mb-3">
+        <select required class="form-control" formControlName="eatId">
+            <option *ngFor="let eat of eats$ | async" [value]="eat.id">{{eat.name}}</option>
+        </select>
     </div>
 
     <button class="btn btn-success" type="submit" (click)="onAddContainer()">Add machine</button>

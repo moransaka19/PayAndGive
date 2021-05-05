@@ -23,7 +23,7 @@
                 <th scope="row">{{machine.id}}</th>
                 <td>{{machine.eat.name}}</td>
                 <td>{{machine.eat.price}}</td>
-                <td>{{machine.fixedLoadingTime}}</td>
+                <td>{{machine.fixedLoadingTime | date : 'short'}}</td>
                 <td>{{machine.isEmpty}}</td>
             </tr>
         </tbody>

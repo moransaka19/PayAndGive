@@ -25,6 +25,12 @@ namespace Server.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_eatRepository.GetAll());
+        }
+
         [HttpPost]
         public IActionResult AddEat([FromBody] AddEatModel model)
         {
