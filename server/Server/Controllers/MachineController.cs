@@ -49,8 +49,8 @@ namespace Server.Controllers
             return Ok(machine);
         }
 
-        [HttpPost("{id}")]
-        public IActionResult AddMachine(AddMachineModel model)
+        [HttpPost]
+        public IActionResult AddMachine([FromBody] AddMachineModel model)
         {
             var machine = _mapper.Map<Machine>(model);
             _machineRepository.Add(machine);
