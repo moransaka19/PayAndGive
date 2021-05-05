@@ -1,0 +1,15 @@
+<form class="w-50" [formGroup]="form">
+    <div class="input-group mb-3">
+        <input class="form-control" required type="text" formControlName="name" name="trip-start" placeholder="Name">
+    </div>
+
+    <div class="input-group mb-3">
+        <input class="form-control" required type="number" formControlName="price" name="trip-start" placeholder="Price">
+    </div>
+    
+    <div class="input-group mb-3">
+        <input class="form-control" required type="number" formControlName="timeExpiredMin" name="trip-start" placeholder="Expires In">
+    </div>
+
+    <button class="btn btn-success" type="submit" (click)="onAddEat()">Add eat</button>
+</form>

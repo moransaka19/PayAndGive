@@ -14,6 +14,7 @@ import { MachinesComponent } from './machines/machines.component';
 import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
 import { AddMachineComponent } from './machines/add-machine/add-machine.component';
 import { AddContainerComponent } from './add-container/add-container.component';
+import { AddEatComponent } from './add-eat/add-eat.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddContainerComponent } from './add-container/add-container.component';
     MachinesComponent,
     MachineDetailsComponent,
     AddMachineComponent,
-    AddContainerComponent
+    AddContainerComponent,
+    AddEatComponent
   ],
   imports: [
     BrowserModule,
