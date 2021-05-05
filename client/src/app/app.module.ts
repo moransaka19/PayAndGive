@@ -13,6 +13,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { MachinesComponent } from './machines/machines.component';
 import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
 import { AddMachineComponent } from './machines/add-machine/add-machine.component';
+import { AddContainerComponent } from './add-container/add-container.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddMachineComponent } from './machines/add-machine/add-machine.componen
     RegisterComponent,
     MachinesComponent,
     MachineDetailsComponent,
-    AddMachineComponent
+    AddMachineComponent,
+    AddContainerComponent
   ],
   imports: [
     BrowserModule,

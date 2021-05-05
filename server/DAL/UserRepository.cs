@@ -9,7 +9,7 @@ namespace DAL.Interfaces
 {
     public class UserRepository : BaseRepository<User>
     {
-        protected override IQueryable<User> baseQuery => base.baseQuery.Include(bq => bq.Role);
+        protected override IQueryable<User> BaseQuery => base.BaseQuery.Include(bq => bq.Role);
         public UserRepository(ApplicationDbContext context) : base(context)
         {
         }

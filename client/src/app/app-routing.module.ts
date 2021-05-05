@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddContainerComponent } from './add-container/add-container.component';
 import { LoginComponent } from './login/login.component';
 import { AddMachineComponent } from './machines/add-machine/add-machine.component';
 import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'machines/:id',
     component: MachineDetailsComponent
+  },
+  {
+    path: 'machines/:id/add-container',
+    component: AddContainerComponent
   }
 ];
 

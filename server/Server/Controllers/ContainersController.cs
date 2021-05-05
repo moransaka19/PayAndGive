@@ -38,7 +38,7 @@ namespace Server.Controllers
         }
         
         [HttpPost]
-        public IActionResult CreateMachineContainer(CreateMachineContainerModel model)
+        public IActionResult CreateMachineContainer([FromBody] CreateMachineContainerModel model)
         {
             var container = _mapper.Map<MachineContainer>(model);
             _machineContainerRepository.Add(container);
