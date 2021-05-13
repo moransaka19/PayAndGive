@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0IoVtDCYxwRBp+3ioyLiX7JLzbibT40aDiiM5xGQc2mNh1hOqTjNcaFh9c8QXzfjLSiWkJPT1MbJTRXugbXKkA==",
+  "dgSpecHash": "DI9eqhuBhMF3kaxVYyUIzkgkdSHpiOhzNAha9JgvHKYkyP1OkhkqjAnbpPd8NIuX8Ay3Wd0bckgkqXzZ7BcwNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Mykyta_Trybunskyi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Mykyta_Trybunskyi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\DuckKick\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

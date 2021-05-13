@@ -151,3 +151,8 @@ C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Server\bin\Debug\net5.0\Swa
 C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Mykyta_Trybunskyi\Desktop\PayAndGive\server\Server\obj\Debug\net5.0\Server.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Project\pay_and_give\server\Server\obj\Debug\net5.0\Server.MvcApplicationPartsAssemblyInfo.cs

@@ -5856,19 +5856,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mykyta_Trybunskyi\\.nuget\\packages\\": {}
+    "C:\\Users\\DuckKick\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Server\\Server.csproj",
+      "projectUniqueName": "D:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\Mykyta_Trybunskyi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Server\\obj\\",
+      "projectPath": "D:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\DuckKick\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\pay_and_give\\server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mykyta_Trybunskyi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DuckKick\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5882,14 +5882,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\AuthOption\\Common.csproj": {
-              "projectPath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\AuthOption\\Common.csproj"
+            "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
+              "projectPath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj"
             },
-            "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\BLL\\BLL.csproj"
+            "D:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Mykyta_Trybunskyi\\Desktop\\PayAndGive\\server\\Domain\\Domain.csproj"
+            "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj"
             }
           }
         }
@@ -5965,7 +5965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

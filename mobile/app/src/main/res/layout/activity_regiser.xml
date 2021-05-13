@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Regiser">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/login"
+        android:layout_marginTop="100sp"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/login"
+        android:layout_alignLeft="@+id/login"
+        android:layout_alignStart="@+id/login"
+        android:layout_marginTop="50sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="@string/sign_up"
+        android:layout_below="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_marginTop="100sp"/>
+</RelativeLayout>

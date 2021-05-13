@@ -7,5 +7,6 @@
     <ActiveDebugProfile>Server</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>PayAndGive - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
