@@ -65,7 +65,7 @@ namespace Server
                         ValidateAudience = true,
                         ValidAudience = authOptions.Audience,
 
-                        ValidateLifetime = true,
+                        // ValidateLifetime = true,
 
                         IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
                         ValidateIssuerSigningKey = true,

@@ -10,11 +10,11 @@ namespace Domain
         public Machine Machine { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public ICollection<Eat> EatList { get; set; }
+        public ICollection<MContainer> Containers { get; set; }
 
         public Receipt()
         {
-            EatList = new List<Eat>();
+            Containers = new List<MContainer>();
         }
     }
 }

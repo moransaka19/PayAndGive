@@ -10,6 +10,5 @@ namespace Server.Models.Machine
     {
         public IEnumerable<int> machineContainerIds { get; set; }
         public int UserId { get; set; }
-        public int MachineId { get; set; }
     }
 }

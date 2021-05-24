@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vsf6YAfY/rMOEkNsu62zBTeTG+/S0bEMeqRA8YPr6qSY3cEyB3mgbAcYgaO/fV//82Wo8aYGnuODZY64ddZzaQ==",
+  "dgSpecHash": "c/3adXXRXmgKS6S2jK5jNhPq/Nao5a0Vg55uzf99VM/YnCq++LDyCu7fi0HBC8wpgO/vAwPqJm2saXQgLKDJ1Q==",
   "success": true,
-  "projectFilePath": "D:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
+  "projectFilePath": "d:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

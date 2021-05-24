@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Regiser">
+    tools:context=".Register">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/login"
@@ -23,6 +23,7 @@
         android:layout_marginTop="50sp"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_button"
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:text="@string/sign_up"
@@ -30,4 +31,14 @@
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
         android:layout_marginTop="100sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_login_button"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="@string/login"
+        android:layout_below="@+id/register_button"
+        android:layout_alignLeft="@+id/register_button"
+        android:layout_alignStart="@+id/register_button"
+        />
 </RelativeLayout>

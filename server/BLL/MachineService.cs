@@ -15,7 +15,7 @@ namespace BLL
             _machineRepository = machineRepository;
         }
 
-        public IEnumerable<MachineContainer> GetAllContainers(int id)
+        public IEnumerable<MContainer> GetAllContainers(int id)
         {
             return _machineRepository.GetById(id).MachineContainers;
         }

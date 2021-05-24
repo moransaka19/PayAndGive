@@ -54,20 +54,20 @@ namespace DAL
                     Value = 20
                 }
             });
-            modelBuilder.Entity<MachineContainer>().HasData(new[]
+            modelBuilder.Entity<MContainer>().HasData(new[]
             {
-                new MachineContainer
+                new MContainer
                 {
                     Id = 1,
                     MachineId = 1,
-                    IsEmpty = false,
+                    IsDeleted = false,
                     EatId = 2
                 },
-                new MachineContainer
+                new MContainer
                 {
                     Id = 2,
                     MachineId = 1,
-                    IsEmpty = false,
+                    IsDeleted = false,
                     EatId = 1
                 }
             });
@@ -98,6 +98,6 @@ namespace DAL
         public DbSet<Machine> Machines { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
-        public DbSet<MachineContainer> MContainers { get; set; }
+        public DbSet<MContainer> Containers { get; set; }
     }
 }

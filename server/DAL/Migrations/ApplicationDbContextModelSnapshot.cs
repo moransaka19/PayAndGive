@@ -32,15 +32,10 @@ namespace DAL.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ReceiptId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TimeExpiredMin")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ReceiptId");
 
                     b.ToTable("Eats");
 
@@ -58,6 +53,57 @@ namespace DAL.Migrations
                             Name = "Eat1",
                             Price = 10,
                             TimeExpiredMin = 10
+                        });
+                });
+
+            modelBuilder.Entity("Domain.MContainer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EatId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FixedLoadingTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MachineId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReceiptId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EatId");
+
+                    b.HasIndex("MachineId");
+
+                    b.HasIndex("ReceiptId");
+
+                    b.ToTable("Containers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EatId = 2,
+                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            MachineId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EatId = 1,
+                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            MachineId = 1
                         });
                 });
 
@@ -84,52 +130,6 @@ namespace DAL.Migrations
                             Id = 1,
                             State = "test",
                             Value = 20
-                        });
-                });
-
-            modelBuilder.Entity("Domain.MachineContainer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("EatId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FixedLoadingTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsEmpty")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MachineId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EatId");
-
-                    b.HasIndex("MachineId");
-
-                    b.ToTable("MContainers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EatId = 2,
-                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsEmpty = false,
-                            MachineId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EatId = 1,
-                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsEmpty = false,
-                            MachineId = 1
                         });
                 });
 
@@ -221,19 +221,12 @@ namespace DAL.Migrations
                             Id = 1,
                             Login = "Admin",
                             Name = "Admin",
-                            Password = "ACyBeIkSb0oWhRvS0Wd3lVwbcRi+OO8jO968vxtmub0WYRDUA6CuUxB4PStpoO5+TA==",
+                            Password = "ADGjgVNFqMy8qsaVNwuhPyW96mam0F6+zuAgkLjiNTc7YFfz4zoo4YWk7qnFTCciPg==",
                             RoleId = 1
                         });
                 });
 
-            modelBuilder.Entity("Domain.Eat", b =>
-                {
-                    b.HasOne("Domain.Receipt", null)
-                        .WithMany("EatList")
-                        .HasForeignKey("ReceiptId");
-                });
-
-            modelBuilder.Entity("Domain.MachineContainer", b =>
+            modelBuilder.Entity("Domain.MContainer", b =>
                 {
                     b.HasOne("Domain.Eat", "Eat")
                         .WithMany()
@@ -246,6 +239,10 @@ namespace DAL.Migrations
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Domain.Receipt", null)
+                        .WithMany("Containers")
+                        .HasForeignKey("ReceiptId");
 
                     b.Navigation("Eat");
 
@@ -289,7 +286,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Domain.Receipt", b =>
                 {
-                    b.Navigation("EatList");
+                    b.Navigation("Containers");
                 });
 #pragma warning restore 612, 618
         }

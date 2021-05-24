@@ -21,40 +21,27 @@ namespace BLL
             _receiptRepository = receiptRepository;
             _machineContainerRepository = machineContainerRepository;
         }
-        public void MakePurchase(IEnumerable<MachineContainer> containers, User customer, Machine machine)
+        public void MakePurchase(ICollection<MContainer> containers, User customer, Machine machine)
         {
             var totalCost = containers.Select(c => c.Eat.Price).Sum();
-            customer.Money = customer.Money - totalCost;
-            var eatList = containers.Select(c => c.Eat).ToList();
+            customer.Money -= totalCost;
             _userRepository.Update(customer);
 
             _receiptRepository.Add(new Receipt
             {
                 Machine = machine,
                 User = customer,
-                EatList = eatList
+                Containers = containers
             });
 
             var emptyContainers = containers.Select(c =>
             {
-                c.IsEmpty = true;
+                c.IsDeleted = true;
 
                 return c;
             }).ToList();
 
             emptyContainers.ForEach(ec => _machineContainerRepository.Update(ec));
-        }
-        public void LoadContainers(IEnumerable<MachineContainer> containers)
-        {
-            containers.Select(c =>
-            {
-                c.IsEmpty = false;
-                c.FixedLoadingTime = DateTime.Now;
-
-                return c;
-            })
-            .ToList()
-            .ForEach(c => _machineContainerRepository.Update(c));
         }
     }
 }

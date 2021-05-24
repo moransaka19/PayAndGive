@@ -40,7 +40,7 @@ namespace Server.Controllers
         [HttpPost]
         public IActionResult CreateMachineContainer([FromBody] CreateMachineContainerModel model)
         {
-            var container = _mapper.Map<MachineContainer>(model);
+            var container = _mapper.Map<MContainer>(model);
             _machineContainerRepository.Add(container);
 
             return Ok();

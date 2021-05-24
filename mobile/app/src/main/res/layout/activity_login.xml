@@ -7,28 +7,38 @@
     tools:context=".Login">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/login"
+        android:id="@+id/login_text"
         android:layout_marginTop="100sp"
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:layout_centerHorizontal="true"/>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/password"
+        android:id="@+id/password_text"
         android:layout_width="200sp"
         android:layout_height="50sp"
-        android:layout_below="@+id/login"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignStart="@+id/login"
+        android:layout_below="@+id/login_text"
+        android:layout_alignLeft="@+id/login_text"
+        android:layout_alignStart="@+id/login_text"
         android:layout_marginTop="50sp"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_button"
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:text="@string/sign_in"
-        android:layout_below="@+id/password"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/password_text"
+        android:layout_alignLeft="@+id/password_text"
+        android:layout_alignStart="@+id/password_text"
         android:layout_marginTop="100sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_register_button"
+        android:text="@string/register"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:layout_below="@id/login_button"
+        android:layout_alignLeft="@id/login_button"
+        android:layout_alignStart="@id/login_button" />
     
 </RelativeLayout>

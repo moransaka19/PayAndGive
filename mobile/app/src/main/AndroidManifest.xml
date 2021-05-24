@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobile">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobile">
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".Regiser" />
+        <activity android:name=".MachineContainerActivity"></activity>
+        <activity android:name=".AddMoneyActivity" />
+        <activity android:name=".Profile" />
+        <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -20,7 +24,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

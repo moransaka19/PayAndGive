@@ -22,7 +22,7 @@ namespace Server.Mapper
                 .ReverseMap();
             CreateMap<AddMachineModel, Machine>()
                 .ReverseMap();
-            CreateMap<CreateMachineContainerModel, MachineContainer>()
+            CreateMap<CreateMachineContainerModel, MContainer>()
                 .ReverseMap();
             CreateMap<AddEatModel, Eat>()
                 .ReverseMap();
@@ -32,7 +32,7 @@ namespace Server.Mapper
             CreateMap<Machine, MachineModel>()
                 .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers));
 
-            CreateMap<MachineContainer, ContainerModel>();
+            CreateMap<MContainer, ContainerModel>();
 
             CreateMap<Eat, EatModel>();
         }

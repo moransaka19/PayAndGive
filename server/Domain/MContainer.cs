@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Domain
 {
-    public class MachineContainer : BaseEntity
+    public class MContainer : BaseEntity
     {
         public DateTime FixedLoadingTime { get; set; }
-        public bool IsEmpty { get; set; }
+        public bool IsDeleted { get; set; }
         public int EatId { get; set; }
         public Eat Eat { get; set; }
         public int MachineId { get; set; }

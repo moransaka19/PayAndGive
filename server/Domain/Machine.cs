@@ -8,11 +8,11 @@ namespace Domain
     {
         public string State { get; set; }
         public int Value { get; set; }
-        public IEnumerable<MachineContainer> MachineContainers { get; set; }
+        public IEnumerable<MContainer> MachineContainers { get; set; }
 
         public Machine()
         {
-            MachineContainers = new List<MachineContainer>();
+            MachineContainers = new List<MContainer>();
         }
     }
 }

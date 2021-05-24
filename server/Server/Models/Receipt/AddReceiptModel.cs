@@ -9,6 +9,6 @@ namespace Server.Models.Receipt
     {
         public int MachineId { get; set; }
         public int UserId { get; set; }
-        public ICollection<int> EatIdList { get; set; }
+        public ICollection<int> ContainersId{ get; set; }
     }
 }

@@ -1,9 +1,6 @@
 package com.example.mobile.services
 
-import com.example.mobile.pojo.AccessTokenModel
-import com.example.mobile.pojo.CurrentUserModel
-import com.example.mobile.pojo.LoginModel
-import com.example.mobile.pojo.RegisterModel
+import com.example.mobile.pojo.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -11,7 +8,6 @@ import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface UsersAPI {
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJBZG1pbiIsInJvbGUiOiJBZG1pbiIsImV4cCI6MTYyMDkwMzEwNSwiaXNzIjoiYXV0aFNlcnZlciIsImF1ZCI6InJlc291cnNlU2VydmVyIn0.VjKU4xiH3WYkSiJT7qXRE7nYPMeAp3cbv5-ljzQiae0")
     @GET("/api/auth/current")
     fun getCurrentUser(): Call<CurrentUserModel>
 
@@ -21,4 +17,9 @@ interface UsersAPI {
     @POST("/api/auth/register")
     fun register(@Body model: RegisterModel): Call<AccessTokenModel>
 
+    @POST("/api/auth/add-money")
+    fun addMoney(@Body model: MoneyModel): Call<Unit>
+
+    @POST("/api/machines/2/make-purchase")
+    fun makePurchase(@Body model: MakePurchaseModel): Call<Unit>
 }

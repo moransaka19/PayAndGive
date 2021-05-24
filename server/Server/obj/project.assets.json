@@ -5861,11 +5861,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
+      "projectUniqueName": "d:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "D:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
+      "projectPath": "d:\\Project\\pay_and_give\\server\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\DuckKick\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\pay_and_give\\server\\Server\\obj\\",
+      "outputPath": "d:\\Project\\pay_and_give\\server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DuckKick\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5882,14 +5882,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
-              "projectPath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj"
+            "d:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
+              "projectPath": "d:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj"
             },
-            "D:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj"
+            "d:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj": {
+              "projectPath": "d:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj"
             },
-            "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj"
+            "d:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj": {
+              "projectPath": "d:\\Project\\pay_and_give\\server\\Domain\\Domain.csproj"
             }
           }
         }

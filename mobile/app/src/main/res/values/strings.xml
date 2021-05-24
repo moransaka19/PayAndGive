@@ -2,4 +2,12 @@
     <string name="app_name">Mobile</string>
     <string name="sign_in">sign in</string>
     <string name="sign_up">Sign up</string>
+    <string name="register">register</string>
+    <string name="login">Login</string>
+    <string name="add_money">Add money</string>
+    <string name="_3">3</string>
+    <string name="Apple" />
+    <string name="_10">10</string>
+    <string name="apple">apple</string>
+    <string name="make_purchase">Make Purchase</string>
 </resources>

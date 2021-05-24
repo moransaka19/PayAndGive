@@ -7,9 +7,9 @@ using System.Text;
 
 namespace DAL.Interfaces
 {
-    public class MachineContainerRepository : BaseRepository<MachineContainer>
+    public class MachineContainerRepository : BaseRepository<MContainer>
     {
-        protected override IQueryable<MachineContainer> BaseQuery => base.BaseQuery
+        protected override IQueryable<MContainer> BaseQuery => base.BaseQuery
             .Include(b => b.Eat);
         public MachineContainerRepository(ApplicationDbContext context) : base(context)
         {

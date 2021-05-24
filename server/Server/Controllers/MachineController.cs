@@ -57,28 +57,5 @@ namespace Server.Controllers
 
             return Ok();
         }
-
-
-        [HttpPost("{id}/make-purchase")]
-        public IActionResult MakePurchase([FromBody] MachineContainerListModel model)
-        {
-            var machine = _machineRepository.GetById(model.MachineId);
-            var user = _userRepository.GetById(model.UserId);
-            var machineContainers = model.machineContainerIds
-            .Select(mci => _machineContainerRepository.GetById(mci));
-
-            _purchaseService.MakePurchase(machineContainers, user, machine);
-
-            return Ok();
-        }
-
-        [HttpPost("{id}/load-containers")]
-        public IActionResult LoadContainer([FromBody] MachineLoadContainer model)
-        {
-            var containsers = model.ContainersId.Select(ci => _machineContainerRepository.GetById(ci));
-            _purchaseService.LoadContainers(containsers);
-
-            return Ok();
-        }
     }
 }

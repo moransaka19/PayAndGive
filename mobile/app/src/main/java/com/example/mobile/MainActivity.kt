@@ -1,5 +1,7 @@
 package com.example.mobile
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -16,30 +18,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var testMessage = "";
+        val sharedPref = this.getSharedPreferences("Authorization", Context.MODE_PRIVATE)
 
-        val userController = UserController()
-        userController.start(object : Callback<CurrentUserModel> {
-            override fun onFailure(call: Call<CurrentUserModel>, t: Throwable) {
-                var message = "Test"
-                if (t.message != null){
-                    message += t.message
-                }
-                Log.println(Log.INFO, "TEST", message)
-            }
+        val token = sharedPref.getString("AccessToken", String())
+        if (token != null){
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+        else{
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
 
-            override fun onResponse(call: Call<CurrentUserModel>, response: Response<CurrentUserModel>) {
-                if (response.isSuccessful) {
-                    println(response.body()?.login)
-                    var message = ""
-                    message += response.body()?.login
-                    testMessage = message
-                } else {
-                    println(response.errorBody())
-                }
-            }
-        })
-
-        text.setText(testMessage)
+        text.setText(token)
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BLL;
+using DAL.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,14 +21,17 @@ namespace Server
     {
         private readonly UserService _userService;
         private readonly TokenService _tokenService;
+        private readonly UserRepository _userRepository;
         private readonly IMapper _mapper;
 
         public AuthController(UserService userService,
             TokenService tokenService,
+            UserRepository userRepository,
             IMapper mapper)
         {
             _userService = userService;
             _tokenService = tokenService;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 
@@ -101,6 +105,21 @@ namespace Server
         public IActionResult Logout()
         {
             Response.Cookies.Delete("accessToken");
+
+            return Ok();
+        }
+
+        [HttpPost("add-money")]
+        public IActionResult AddMoney([FromBody] AddMoneyModel model)
+        {
+            var user = _userService.GetById(model.UserId);
+            if (user.Money == null)
+            {
+                user.Money = 0;
+            }
+
+            user.Money += model.Money;
+            _userRepository.Update(user);
 
             return Ok();
         }
