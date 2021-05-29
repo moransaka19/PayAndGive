@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/machine_container_item_list"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/container_layout"
-    android:layout_width="match_parent"
-    android:layout_height="50sp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
 
     <TextView
         android:id="@+id/container_id_text"
@@ -23,10 +25,11 @@
         android:layout_height="50sp"
         android:layout_toEndOf="@id/container_eat_text" />
 
-    <CheckBox
-        android:id="@+id/container_is_book_check"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/container_book_checkbox"
+        android:layout_width="75sp"
+        android:layout_height="wrap_content"
+        android:text="@string/book1"
         android:layout_toEndOf="@id/container_price_text" />
 
 </RelativeLayout>

@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.mobile.controllers.UserController
-import com.example.mobile.pojo.AccessTokenModel
-import com.example.mobile.pojo.CurrentUserModel
-import kotlinx.android.synthetic.main.activity_login.*
+import com.example.mobile.models.profile.CurrentUserModel
 import kotlinx.android.synthetic.main.activity_profile.*
 import retrofit2.Call
 import retrofit2.Callback

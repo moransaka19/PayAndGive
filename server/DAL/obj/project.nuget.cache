@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YAaCkTIGmS8cJRMqWW5iQ/4cKZ7AldqAB0yd3oJdzzCxu6N81mKq0Fr+GKkNIimX6nrcB5ZSp9tpyiEtY1GLgA==",
+  "dgSpecHash": "Kuj8J7jUPxh6F2cPPF0sPem+uBvE535izmal+xMbkZ4ExDO0iSY0bRXYwYAV/T20O1oWdtGJ3avPzvF53G3H1Q==",
   "success": true,
-  "projectFilePath": "d:\\Project\\pay_and_give\\server\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\Project\\pay_and_give\\Server\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -10,4 +10,7 @@
     <string name="_10">10</string>
     <string name="apple">apple</string>
     <string name="make_purchase">Make Purchase</string>
+    <string name="buy">buy</string>
+    <string name="book" />
+    <string name="book1">book</string>
 </resources>

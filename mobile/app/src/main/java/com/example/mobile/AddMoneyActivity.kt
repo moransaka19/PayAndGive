@@ -4,11 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.mobile.controllers.UserController
-import com.example.mobile.pojo.AccessTokenModel
-import com.example.mobile.pojo.MoneyModel
-import com.example.mobile.pojo.UnitModel
+import com.example.mobile.models.profile.MoneyModel
 import com.example.mobile.services.JWTUtils
 import kotlinx.android.synthetic.main.activity_add_money.*
 import retrofit2.Call
@@ -30,7 +27,10 @@ class AddMoneyActivity : AppCompatActivity() {
             val controller = UserController(sharedPref)
 
             val money = add_money_text.text.toString().toDouble()
-            val moneyModel = MoneyModel(tokenBody!!.sub.toInt(), money)
+            val moneyModel = MoneyModel(
+                tokenBody!!.sub.toInt(),
+                money
+            )
             controller.addMoney(object : Callback<Unit> {
                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                     if (response.isSuccessful) {

@@ -3,53 +3,76 @@ package com.example.mobile
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewGroup
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
-import com.example.mobile.fragments.ContainerFragment
-import com.example.mobile.fragments.ItemFragment
-import com.example.mobile.fragments.MyItemRecyclerViewAdapter
-import kotlinx.android.synthetic.main.activity_machine_container.*
+import com.example.mobile.controllers.ContainerController
+import com.example.mobile.fragments.MachineContainerListFragment
+import com.example.mobile.models.container.Container
+import kotlinx.android.synthetic.main.activity_machine_container_list.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import android.widget.AdapterView.OnItemClickListener as OnItemClickListener
 
-class MachineContainerActivity : AppCompatActivity() {
+class MachineContainerActivity() : AppCompatActivity() {
+    val containers = listOf(
+        Container(1, 1, "Name", 10.0),
+        Container(12, 2, "Name1", 11.0)
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_machine_container)
+        setContentView(R.layout.activity_machine_container_list)
 
         val sharedPref = this.getSharedPreferences("Authorization", Context.MODE_PRIVATE)
         val context = this
         val machinesId = arrayOf(1, 2, 3, 4)
-        val containers = listOf("asdlfjasf", "sdfsdf", "asdf")
-
-        val machinesAdapter = ArrayAdapter<Int>(this, android.R.layout.simple_spinner_item, machinesId)
+        val machinesAdapter =
+            ArrayAdapter<Int>(this, android.R.layout.simple_spinner_item, machinesId)
         machine_spinner.adapter = machinesAdapter
+        machine_spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
 
-        val bundle = Bundle()
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val machineIdSelected = machinesId[position]
 
-        bundle.putString("one", "1")
+                val controller = ContainerController(sharedPref)
+                controller.GetAllMachineContainer(object : Callback<List<Container>> {
+                    override fun onResponse(
+                        call: Call<List<Container>>,
+                        response: Response<List<Container>>
+                    ) {
+                        if (response.isSuccessful) {
+                            var fragment =
+                                supportFragmentManager.findFragmentById(R.id.container_fragment) as MachineContainerListFragment
 
-        list.adapter = MyItemRecyclerViewAdapter(containers)
+                            fragment.setContainers(response.body()!!)
+                        }
+                    }
 
+                    override fun onFailure(call: Call<List<Container>>, t: Throwable) {
+                        TODO("Not yet implemented")
+                    }
+                }, machineIdSelected)
+            }
+        }
 
+        val fm = supportFragmentManager
+        var fragment = fm.findFragmentById(R.id.container_fragment) as? MachineContainerListFragment
 
-//        val model = MakePurchaseModel(containersId, 1)
-//        val controller = UserController(sharedPref)
-//        container_make_purchase.setOnClickListener{
-//            controller.makePurchase(object : Callback<Unit> {
-//                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-//                    if (response.isSuccessful) {
-//                        val intent = Intent(context, Profile::class.java)
-//                        startActivity(intent)
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<Unit>, t: Throwable) {
-//                    TODO("Not yet implemented")
-//                }
-//            }, model)
-//        }
-
+        if (fragment == null) {
+            fragment = MachineContainerListFragment()
+            fm.beginTransaction()
+                .add(R.id.container_fragment, fragment)
+                .commit()
+        }
     }
 }

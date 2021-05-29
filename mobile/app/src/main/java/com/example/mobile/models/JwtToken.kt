@@ -1,4 +1,4 @@
-package com.example.mobile.pojo
+package com.example.mobile.models
 
 import com.beust.klaxon.*
 

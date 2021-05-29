@@ -51,10 +51,11 @@ namespace Server.Controllers
         {
             try
             {
-
                 var containers = _machineService.GetAllContainers(id);
+                var models = _mapper.Map<ICollection<GetMachineContainerModel>>(containers);
 
-                return Ok(containers);
+
+                return Ok(models);
             }
             catch
             {

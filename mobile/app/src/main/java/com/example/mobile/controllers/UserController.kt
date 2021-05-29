@@ -1,7 +1,12 @@
 package com.example.mobile.controllers
 
 import android.content.SharedPreferences
-import com.example.mobile.pojo.*
+import com.example.mobile.models.login.AccessTokenModel
+import com.example.mobile.models.profile.CurrentUserModel
+import com.example.mobile.models.login.LoginModel
+import com.example.mobile.models.login.RegisterModel
+import com.example.mobile.models.profile.MakePurchaseModel
+import com.example.mobile.models.profile.MoneyModel
 import com.example.mobile.services.UsersAPI
 import okhttp3.OkHttpClient
 import retrofit2.Call

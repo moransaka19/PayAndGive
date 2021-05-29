@@ -29,10 +29,11 @@ namespace Server.Mapper
             CreateMap<AddReceiptModel, Receipt>()
                 .ReverseMap();
 
-            CreateMap<Machine, MachineModel>()
-                .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers));
-
+            CreateMap<Machine, MachineModel>();
             CreateMap<MContainer, ContainerModel>();
+            CreateMap<MContainer, GetMachineContainerModel>()
+                .ForMember(dst => dst.Name, opt => opt.MapFrom(src => src.Eat.Name))
+                .ForMember(dst => dst.Price, opt => opt.MapFrom(src => src.Eat.Price));
 
             CreateMap<Eat, EatModel>();
         }

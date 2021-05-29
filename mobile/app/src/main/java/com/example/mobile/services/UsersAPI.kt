@@ -1,10 +1,14 @@
 package com.example.mobile.services
 
-import com.example.mobile.pojo.*
+import com.example.mobile.models.login.AccessTokenModel
+import com.example.mobile.models.profile.CurrentUserModel
+import com.example.mobile.models.login.LoginModel
+import com.example.mobile.models.login.RegisterModel
+import com.example.mobile.models.profile.MakePurchaseModel
+import com.example.mobile.models.profile.MoneyModel
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface UsersAPI {

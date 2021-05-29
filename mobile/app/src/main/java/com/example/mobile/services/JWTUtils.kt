@@ -1,8 +1,7 @@
 package com.example.mobile.services
 
 import android.util.Base64
-import android.util.Log
-import com.example.mobile.pojo.JwtToken
+import com.example.mobile.models.JwtToken
 import java.io.UnsupportedEncodingException
 
 object JWTUtils {

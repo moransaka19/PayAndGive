@@ -10,6 +10,5 @@
         public int Id { get; set; }
         public string State { get; set; }
         public int Value { get; set; }
-        public ContainerModel[] Containers { get; set; }
     }
 }

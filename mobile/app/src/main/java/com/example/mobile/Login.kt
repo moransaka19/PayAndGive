@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobile.controllers.UserController
-import com.example.mobile.pojo.AccessTokenModel
-import com.example.mobile.pojo.LoginModel
+import com.example.mobile.models.login.AccessTokenModel
+import com.example.mobile.models.login.LoginModel
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +25,8 @@ class Login : AppCompatActivity() {
             val password = password_text.text.toString()
 
             val context = this
-            val loginModel = LoginModel(login, password)
+            val loginModel =
+                LoginModel(login, password)
 
             val userController = UserController(sharedPref)
             userController.login(object: Callback<AccessTokenModel> {
