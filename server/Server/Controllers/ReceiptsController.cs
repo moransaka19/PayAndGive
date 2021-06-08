@@ -48,7 +48,6 @@ namespace Server.Controllers
         [HttpPost]
         public IActionResult AddReceipt([FromBody] AddReceiptModel model)
         {
-
             var machine = _machineRepository.GetById(model.MachineId);
             var user = _userRepository.GetById(model.UserId);
             var machineContainers = model.ContainersId

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n4/TH40ouipXBaCyIMefFoqUsYqbRj37u0uMcm3/m3TKOv3tuS7qkh6xDsOCn8NoxEZGn8V0+QpA9wth6+zd6A==",
+  "dgSpecHash": "Yz9RTpzdcuOpmDBgbu7ffWwFK7xlFw4vIck9nydnEJXWtkh+zX4Fb8DfmgB7qr37lZxLDlUG4wtKxQ+ZjV88Dg==",
   "success": true,
-  "projectFilePath": "D:\\Project\\pay_and_give\\Server\\BLL\\BLL.csproj",
+  "projectFilePath": "D:\\Project\\pay_and_give\\server\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DuckKick\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\DuckKick\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",

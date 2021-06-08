@@ -51,7 +51,7 @@ namespace DAL
                 {
                     Id = 1,
                     State = "test",
-                    Value = 20
+                    Value = 20,
                 }
             });
             modelBuilder.Entity<MContainer>().HasData(new[]

@@ -35,7 +35,6 @@ class ContainerAdapter(private val containers: List<Container>) :
                 container.copy(isAdded = true)
 
             } else it
-
         }
         notifyDataSetChanged()
     }

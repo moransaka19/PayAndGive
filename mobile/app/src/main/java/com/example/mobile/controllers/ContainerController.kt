@@ -11,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ContainerController(private val sharedPref: SharedPreferences) {
-    private val BASE_URL = " https://2263363d8916.ngrok.io/"
+    private val BASE_URL = "https://e8be73c05a76.ngrok.io"
     private val token = sharedPref.getString("AccessToken", String()) ?: ""
 
     private val containerService = Retrofit.Builder()
@@ -25,7 +25,7 @@ class ContainerController(private val sharedPref: SharedPreferences) {
         .build()
         .create(ContainerAPI::class.java)
 
-    fun GetAllMachineContainer(callback: Callback<List<Container>>, id: Int){
+    fun GetAllMachineContainer(callback: Callback<List<Container>>, id: Int) {
         val call: Call<List<Container>> = containerService.GetAllMachineContainers(id)
 
         call.enqueue(callback)

@@ -50,7 +50,7 @@ namespace Server.Controllers
         public IActionResult GetAllMachineContainers(int id)
         {
             try
-            {
+             {
                 var containers = _machineService.GetAllContainers(id);
                 var models = _mapper.Map<ICollection<GetMachineContainerModel>>(containers);
 

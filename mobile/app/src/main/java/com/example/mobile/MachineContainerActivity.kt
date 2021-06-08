@@ -74,5 +74,6 @@ class MachineContainerActivity() : AppCompatActivity() {
                 .add(R.id.container_fragment, fragment)
                 .commit()
         }
+
     }
 }
