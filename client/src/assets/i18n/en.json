@@ -1,6 +1,5 @@
 {
-  "TEST": "Test",
-  "REGESTER_USER": "Register user",
+  "REGISTER_USER": "Register user",
   "MACHINES": "Machines",
   "ADD_EAT": "Add eat",
   "LOGOUT": "Logout",

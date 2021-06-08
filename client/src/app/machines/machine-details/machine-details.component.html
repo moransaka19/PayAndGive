@@ -5,19 +5,19 @@
     <div><b>Value: </b> {{machine.value}}</div>
 
     <button class="btn btn-success" routerLink="./add-container" *ngIf="machine.containers.length < machine.value">
-        Add container
+      {{'ADD_CONTAINER' | translate}}
     </button>
 
-    <div>Containers: </div>
+    <div>{{'CONTAINERS' | translate}}: </div>
 
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Eat</th>
-                <th scope="col">Price</th>
-                <th scope="col">Fixed Loading Time</th>
-                <th scope="col">Empty</th>
+                <th scope="col">{{'EAT' | translate}}</th>
+                <th scope="col">{{'PRICE' | translate}}</th>
+                <th scope="col">{{'LOADING TIME' | translate}}</th>
+                <th scope="col">{{'EMPTY' | translate}}</th>
             </tr>
         </thead>
         <tbody>

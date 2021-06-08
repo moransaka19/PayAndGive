@@ -6,10 +6,10 @@
     <div class="input-group mb-3">
         <input class="form-control" required type="number" formControlName="price" name="trip-start" placeholder="Price">
     </div>
-    
+
     <div class="input-group mb-3">
-        <input class="form-control" required type="number" formControlName="timeExpiredMin" name="trip-start" placeholder="Expires In">
+        <input class="form-control" required type="number" formControlName="timeExpiredMin" name="trip-start" placeholder="{{'EXPIRES_IN' | translate}}">
     </div>
 
-    <button class="btn btn-success" type="submit" (click)="onAddEat()">Add eat</button>
+    <button class="btn btn-success" type="submit" (click)="onAddEat()">{{ 'ADD_EAT' | translate}}</button>
 </form>
