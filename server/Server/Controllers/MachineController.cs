@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
+
     [Route("api/machines")]
     public class MachineController : Controller
     {
@@ -64,6 +66,21 @@ namespace Server.Controllers
             var machine = _mapper.Map<MachineModel>(_machineRepository.GetById(id));
 
             return Ok(machine);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{id}/containers")]
+        public IActionResult GetNotProcessedMachines(int id)
+        {
+            var containers = _machineContainerRepository.GetAll(x => x.MachineId == id && !x.IsDeleted).ToList();
+            
+            containers.ForEach(x =>
+            {
+                x.IsDeleted = true;
+                _machineContainerRepository.Update(x);
+            });
+
+            return Ok(_mapper.Map<ContainerModel[]>(containers));
         }
 
         [HttpPost]
