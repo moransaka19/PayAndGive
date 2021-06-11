@@ -72,11 +72,11 @@ namespace Server.Controllers
         [HttpGet("{id}/containers")]
         public IActionResult GetNotProcessedMachines(int id)
         {
-            var containers = _machineContainerRepository.GetAll(x => x.MachineId == id && !x.IsDeleted).ToList();
+            var containers = _machineContainerRepository.GetAll(x => x.MachineId == id && x.ReadyForOpen).ToList();
             
             containers.ForEach(x =>
             {
-                x.IsDeleted = true;
+                x.ReadyForOpen = false;
                 _machineContainerRepository.Update(x);
             });
 

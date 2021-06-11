@@ -37,7 +37,7 @@ namespace BLL
             var emptyContainers = containers.Select(c =>
             {
                 c.IsDeleted = true;
-
+                c.ReadyForOpen = true;
                 return c;
             }).ToList();
 
