@@ -38,8 +38,24 @@ namespace Server.Controllers
         public IActionResult GetMachines()
         {
             var machines = _mapper.Map<IEnumerable<MachineModel>>(_machineRepository.GetAll());
-            
+
             return Ok(machines);
+        }
+
+        [HttpGet("not-deleted")]
+        public IActionResult GetNotDeletedMachines()
+        {
+            var machines = _machineRepository.GetAll(m => m.MachineContainers.Any(x => !x.IsDeleted))
+                .ToList()
+                .Select(x =>
+                {
+                    x.MachineContainers = x.MachineContainers.Where(z => !z.IsDeleted);
+
+                    return x;
+                });
+            var result = _mapper.Map<IEnumerable<MachineModel>>(machines);
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

@@ -156,3 +156,4 @@ D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Sw
 D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Project\pay_and_give\server\Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Project\pay_and_give\server\Server\obj\Debug\net5.0\Server.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\pay_and_give\Server\Server\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll

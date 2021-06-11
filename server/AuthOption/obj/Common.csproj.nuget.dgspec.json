@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {}
+    "D:\\Project\\pay_and_give\\Server\\AuthOption\\Common.csproj": {}
   },
   "projects": {
-    "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj": {
+    "D:\\Project\\pay_and_give\\Server\\AuthOption\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj",
+        "projectUniqueName": "D:\\Project\\pay_and_give\\Server\\AuthOption\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\Project\\pay_and_give\\server\\AuthOption\\Common.csproj",
+        "projectPath": "D:\\Project\\pay_and_give\\Server\\AuthOption\\Common.csproj",
         "packagesPath": "C:\\Users\\DuckKick\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\pay_and_give\\server\\AuthOption\\obj\\",
+        "outputPath": "D:\\Project\\pay_and_give\\Server\\AuthOption\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DuckKick\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_machine_container_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.widget.AdapterView.OnItemClickListener as OnItemClickListener
 
 class MachineContainerActivity() : AppCompatActivity() {
     val containers = listOf(
@@ -26,7 +25,6 @@ class MachineContainerActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_machine_container_list)
 
         val sharedPref = this.getSharedPreferences("Authorization", Context.MODE_PRIVATE)
-        val context = this
         val machinesId = arrayOf(1, 2, 3, 4)
         val machinesAdapter =
             ArrayAdapter<Int>(this, android.R.layout.simple_spinner_item, machinesId)
@@ -44,7 +42,9 @@ class MachineContainerActivity() : AppCompatActivity() {
             ) {
                 val machineIdSelected = machinesId[position]
 
-                val controller = ContainerController(sharedPref)
+                val token = sharedPref.getString("AccessToken", "")!!
+
+                val controller = ContainerController(token)
                 controller.GetAllMachineContainer(object : Callback<List<Container>> {
                     override fun onResponse(
                         call: Call<List<Container>>,
@@ -69,7 +69,7 @@ class MachineContainerActivity() : AppCompatActivity() {
         var fragment = fm.findFragmentById(R.id.container_fragment) as? MachineContainerListFragment
 
         if (fragment == null) {
-            fragment = MachineContainerListFragment()
+            fragment = MachineContainerListFragment(token)
             fm.beginTransaction()
                 .add(R.id.container_fragment, fragment)
                 .commit()

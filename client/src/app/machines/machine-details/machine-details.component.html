@@ -1,8 +1,8 @@
 <ng-container *ngIf="machine$ | async as machine">
     <h2>Id: {{machine.id}}</h2>
 
-    <div><b>State: </b> {{machine.state}}</div>
-    <div><b>Value: </b> {{machine.value}}</div>
+    <div><b>{{'STATE' | translate}}: </b> {{machine.state}}</div>
+    <div><b>{{'VALUE' | translate}}: </b> {{machine.value}}</div>
 
     <button class="btn btn-success" routerLink="./add-container" *ngIf="machine.containers.length < machine.value">
       {{'ADD_CONTAINER' | translate}}
@@ -16,7 +16,7 @@
                 <th scope="col">#</th>
                 <th scope="col">{{'EAT' | translate}}</th>
                 <th scope="col">{{'PRICE' | translate}}</th>
-                <th scope="col">{{'LOADING TIME' | translate}}</th>
+                <th scope="col">{{'LOADING_TIME' | translate}}</th>
                 <th scope="col">{{'EMPTY' | translate}}</th>
             </tr>
         </thead>

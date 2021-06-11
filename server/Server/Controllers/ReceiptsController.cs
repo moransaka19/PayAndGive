@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
-    [Authorize(Roles = "Customer")]
     [Route("api/[controller]")]
     [ApiController]
     public class ReceiptsController : ControllerBase
@@ -51,7 +50,7 @@ namespace Server.Controllers
             var machine = _machineRepository.GetById(model.MachineId);
             var user = _userRepository.GetById(model.UserId);
             var machineContainers = model.ContainersId
-            .Select(mci => _machineContainerRepository.GetById(mci)).ToList();
+                .Select(mci => _machineContainerRepository.GetById(mci)).ToList();
 
             _purchaseService.MakePurchase(machineContainers, user, machine);
 

@@ -3,21 +3,16 @@ using Autofac;
 using DAL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Server
 {
+    using System.IdentityModel.Tokens.Jwt;
     using System.Text.Json.Serialization;
 
     public class Startup
@@ -36,7 +31,7 @@ namespace Server
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(databaseName: "PayAndGive"));
 
             services.AddSingleton(authOptions);
 
@@ -48,8 +43,7 @@ namespace Server
                 {
                     b.AllowAnyMethod();
                     b.AllowAnyHeader();
-                    b.WithOrigins(new[] { "http://localhost:4200" });
-                    b.AllowCredentials();
+                    b.AllowAnyOrigin();
                 });
             });
 
@@ -65,7 +59,7 @@ namespace Server
                         ValidateAudience = true,
                         ValidAudience = authOptions.Audience,
 
-                        // ValidateLifetime = true,
+                        ValidateLifetime = false,
 
                         IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
                         ValidateIssuerSigningKey = true,
@@ -78,6 +72,7 @@ namespace Server
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
 
+            services.AddSwaggerGen();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -98,7 +93,16 @@ namespace Server
 
             app.UseCors();
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             app.UseRouting();
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             app.UseAuthentication();
 

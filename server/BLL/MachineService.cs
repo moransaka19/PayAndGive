@@ -2,6 +2,7 @@
 using Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BLL
@@ -17,7 +18,7 @@ namespace BLL
 
         public IEnumerable<MContainer> GetAllContainers(int id)
         {
-            return _machineRepository.GetById(id).MachineContainers;
+            return _machineRepository.GetById(id).MachineContainers.Where(mc => mc.IsDeleted == false);
         }
     }
 }

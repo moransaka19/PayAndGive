@@ -1,5 +1,6 @@
 package com.example.mobile.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobile.R
 import com.example.mobile.controllers.ContainerController
+import com.example.mobile.controllers.ReceiptController
 import com.example.mobile.models.container.Container
 import com.example.mobile.services.ContainerAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MachineContainerListFragment() : Fragment() {
+class MachineContainerListFragment(private val token: String) : Fragment() {
     private lateinit var containerRecyclerView: RecyclerView
     private lateinit var buyButton: Button
     private lateinit var adapter: ContainerAdapter
@@ -31,9 +33,9 @@ class MachineContainerListFragment() : Fragment() {
         val view = inflater.inflate(R.layout.fragment_container_item_list, container, false)
 
         buyButton = view.findViewById(R.id.buy_button)
-        buyButton.setOnClickListener(View.OnClickListener {
-            val controller = ContainerController(sharedPref)
-            controller.GetAllMachineContainer(object : Callback<List<Container>> {
+        buyButton.setOnClickListener {
+            val controller = ReceiptController(token)
+            controller.addReceipt(object : Callback<List<Container>> {
                 override fun onResponse(
                     call: Call<List<Container>>,
                     response: Response<List<Container>>
@@ -49,8 +51,8 @@ class MachineContainerListFragment() : Fragment() {
                 override fun onFailure(call: Call<List<Container>>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
-            }, machineIdSelected)
-        })
+            }, )
+        }
 
         containerRecyclerView = view.findViewById(R.id.machine_container_recycle_view)
         containerRecyclerView.layoutManager = LinearLayoutManager(activity)

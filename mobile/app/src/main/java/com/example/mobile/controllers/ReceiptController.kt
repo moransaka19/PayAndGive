@@ -1,18 +1,19 @@
 package com.example.mobile.controllers
 
-import android.content.SharedPreferences
 import com.example.mobile.models.container.Container
+import com.example.mobile.models.recept.AddReceiptModel
 import com.example.mobile.services.ContainerAPI
+import com.example.mobile.services.ReceiptsAPI
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class ContainerController(private val token: String) {
+class ReceiptController(private val token: String) {
     private val BASE_URL = "https://e8be73c05a76.ngrok.io"
 
-    private val containerService = Retrofit.Builder()
+    private val receiptService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
         .client(OkHttpClient().newBuilder().addInterceptor { chain ->
@@ -21,10 +22,10 @@ class ContainerController(private val token: String) {
             )
         }.build())
         .build()
-        .create(ContainerAPI::class.java)
+        .create(ReceiptsAPI::class.java)
 
-    fun GetAllMachineContainer(callback: Callback<List<Container>>, id: Int) {
-        val call: Call<List<Container>> = containerService.GetAllMachineContainers(id)
+    fun addReceipt(callback: Callback<Unit>, model: AddReceiptModel) {
+        val call: Call<List<Container>> = receiptService.(id)
 
         call.enqueue(callback)
     }
