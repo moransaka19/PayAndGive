@@ -1,5 +1,7 @@
 ﻿using Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.DataEncryption;
+using Microsoft.EntityFrameworkCore.DataEncryption.Providers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,13 @@ namespace DAL
 {
     public class ApplicationDbContext : DbContext
     {
+        private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key;
+        private readonly byte[] _encryptionIV = AesProvider.GenerateKey(AesKeySize.AES128Bits).IV;
+        private readonly IEncryptionProvider _provider;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            _provider = new AesProvider(_encryptionKey, _encryptionIV);
+            //Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -90,6 +96,8 @@ namespace DAL
                     TimeExpiredMin = 10
                 }
             });
+
+            modelBuilder.UseEncryption(_provider);
 
             base.OnModelCreating(modelBuilder);
         }

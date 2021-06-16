@@ -31,7 +31,8 @@ namespace Server
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
 
-            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(databaseName: "PayAndGive"));
+            //services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase(databaseName: "PayAndGive"));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             services.AddSingleton(authOptions);
 
