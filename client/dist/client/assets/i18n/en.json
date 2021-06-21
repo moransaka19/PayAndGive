@@ -1,0 +1,25 @@
+{
+  "REGISTER_USER": "Register user",
+  "MACHINES": "Machines",
+  "ADD_EAT": "Add eat",
+  "LOGOUT": "Logout",
+  "LOGIN": "Login",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "STATE": "State",
+  "VALUE": "Value",
+  "CONTAINERS": "Containers",
+  "ADD_MACHINE": "Add machine",
+  "PRICE": "Price",
+  "EXPIRES_IN": "Expires in",
+  "ADMIN": "Admin",
+  "CUSTOMER": "Customer",
+  "OPERATOR": "Operator",
+  "REGISTER": "Register",
+  "EAT": "Eat",
+  "EMPTY": "Empty",
+  "LOADING_TIME": "Loading time",
+  "ADD_CONTAINER": "Add container",
+  "IS_EMPTY": "Is empty"
+
+}
