@@ -7,7 +7,6 @@ import { AddMachineComponent } from './machines/add-machine/add-machine.componen
 import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
 import { MachinesComponent } from './machines/machines.component';
 import { RegisterComponent } from './register/register.component';
-import {BackupComponent} from './backup/backup.component';
 import {ReportComponent} from './report/report.component';
 
 
@@ -44,10 +43,6 @@ const routes: Routes = [
   {
     path: 'eat/add',
     component: AddEatComponent
-  },
-  {
-    path: 'backup',
-    component: BackupComponent
   },
   {
     path: 'report',
