@@ -8,7 +8,7 @@ import {MachineDetailsComponent} from './machines/machine-details/machine-detail
 import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
-import {BackupDatabaseComponent} from "./backup-database/backup-database.component";
+import {BackupDatabaseComponent} from './backup-database/backup-database.component';
 
 
 
