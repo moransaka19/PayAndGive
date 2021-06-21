@@ -9,6 +9,7 @@ import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
 import {BackupDatabaseComponent} from './backup-database/backup-database.component';
+import {AdminComponent} from './admin/admin.component';
 
 
 
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: 'backup-database',
     component: BackupDatabaseComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: 'report',

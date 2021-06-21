@@ -19,6 +19,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ReportComponent} from './report/report.component';
 import {BackupDatabaseComponent} from './backup-database/backup-database.component';
+import { AdminComponent } from './admin/admin.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     AddContainerComponent,
     AddEatComponent,
     ReportComponent,
-    BackupDatabaseComponent
+    BackupDatabaseComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
