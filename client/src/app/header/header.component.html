@@ -11,7 +11,10 @@
           <a class="nav-link" routerLink="register">{{ 'REGISTER_USER' | translate }}</a>
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link" routerLink="backup">Backup</a>
+          <a class="nav-link" routerLink="admin">Backup</a>
+        </li>
+        <li class="nav-item" *ngIf="authenticated">
+          <a class="nav-link" routerLink="report">Report</a>
         </li>
         <li class="nav-item" *ngIf="authenticated">
           <a class="nav-link" routerLink="machines">{{ 'MACHINES' | translate}}</a>
