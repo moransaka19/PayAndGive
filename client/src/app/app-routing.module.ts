@@ -45,7 +45,7 @@ const routes: Routes = [
     component: AddEatComponent
   },
   {
-    path: 'backup',
+    path: 'backup/backup',
     component: BackupComponent
   }
 ];

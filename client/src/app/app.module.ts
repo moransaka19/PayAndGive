@@ -8,7 +8,7 @@ import {LoginComponent} from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {HeaderComponent} from './header/header.component';
-import {RegisterComponent} from './register/register.component'
+import {RegisterComponent} from './register/register.component';
 import {AuthInterceptor} from './helpers/auth.interceptor';
 import {MachinesComponent} from './machines/machines.component';
 import {MachineDetailsComponent} from './machines/machine-details/machine-details.component';
@@ -16,7 +16,7 @@ import {AddMachineComponent} from './machines/add-machine/add-machine.component'
 import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { BackupComponent } from './backup/backup.component';
 
 export function createTranslateLoader(http: HttpClient) {
