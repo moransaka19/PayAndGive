@@ -10,6 +10,6 @@ namespace Server.Models.Machine
 
         public EatModel Eat { get; set; }
 
-        public bool IsEmpty { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import {map, tap} from 'rxjs/operators';
 
 @Component({
   templateUrl: './machine-details.component.html',
@@ -16,6 +17,8 @@ export class MachineDetailsComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.machine$ = this.http.get(`${environment.apiUrl}/machines/${this.activatedRoute.snapshot.params.id}`);
+    this.machine$ = this.http.get<any>(`${environment.apiUrl}/machines/${this.activatedRoute.snapshot.params.id}`).pipe(
+      tap(m => m.containers = m.containers.filter(x => ! x.isDeleted))
+    );
   }
 }

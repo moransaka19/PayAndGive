@@ -38,6 +38,7 @@ namespace BLL
             {
                 c.IsDeleted = true;
                 c.ReadyForOpen = true;
+
                 return c;
             }).ToList();
 

@@ -61,12 +61,10 @@ namespace Server.Controllers
                 var containers = _machineService.GetAllContainers(id);
                 var models = _mapper.Map<ICollection<GetMachineContainerModel>>(containers);
 
-
                 return Ok(models);
             }
             catch
             {
-
                 return BadRequest();
             }
         }
@@ -79,12 +77,10 @@ namespace Server.Controllers
                 var containers = _machineService.GetAllSoldMachineContainers(id);
                 var models = _mapper.Map<ICollection<GetMachineContainerModel>>(containers);
 
-
                 return Ok(models);
             }
             catch
             {
-
                 return BadRequest();
             }
         }
