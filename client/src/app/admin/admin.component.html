@@ -1,1 +1,9 @@
-<p>admin works!</p>
+<button class="btn btn-success" (click)="onBackup()">Backup</button>
+
+<br>
+<select class="form-select" #select>
+  <option selected>Select a backup</option>
+  <option *ngFor="let backup of backups$ | async" [value]="backup">{{backup}}</option>
+</select>
+
+<button class="btn btn-danger" (click)="onRestore(select.value)">Restore</button>
