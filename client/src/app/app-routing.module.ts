@@ -8,7 +8,7 @@ import { MachineDetailsComponent } from './machines/machine-details/machine-deta
 import { MachinesComponent } from './machines/machines.component';
 import { RegisterComponent } from './register/register.component';
 import {BackupComponent} from './backup/backup.component';
-import {ReportComponent} from "./report/report.component";
+import {ReportComponent} from './report/report.component';
 
 
 const routes: Routes = [
