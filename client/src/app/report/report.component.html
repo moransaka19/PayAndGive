@@ -1,0 +1,36 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" *ngFor="let machine of machines$ | async" (click)="onSelectMachine(machine.id)">{{machine.id}}</a>
+  </div>
+</div>
+
+<button *ngIf="machineId" class="btn btn-primary" (click)="onDownloadPdf()">Download pdf</button>
+
+<div *ngIf="machineId" id="report">
+  <h2>Machine Id: {{machineId}}</h2>
+
+  <table class="table table-sm">
+    <thead>
+    <tr>
+      <th scope="col">Container</th>
+      <th scope="col">Eat</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let container of containers$ | async">
+      <td>{{container.id}}</td>
+      <td>{{container.name}}</td>
+      <td>{{container.price}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Full price</td>
+      <td>{{getContainersSumPrice(containers$ | async)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

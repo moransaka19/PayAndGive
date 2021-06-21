@@ -20,5 +20,11 @@ namespace BLL
         {
             return _machineRepository.GetById(id).MachineContainers.Where(mc => mc.IsDeleted == false);
         }
+
+        public IEnumerable<MContainer> GetAllSoldMachineContainers(int id)
+        {
+            return _machineRepository.GetById(id).MachineContainers.Where(mc => mc.IsDeleted == true);
+        }
     }
 }
+

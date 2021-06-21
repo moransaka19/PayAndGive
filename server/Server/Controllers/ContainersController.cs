@@ -71,6 +71,24 @@ namespace Server.Controllers
             }
         }
 
+        [HttpGet("sold-machines/{id}")]
+        public IActionResult GetAllSoldMachineContainers(int id)
+        {
+            try
+            {
+                var containers = _machineService.GetAllSoldMachineContainers(id);
+                var models = _mapper.Map<ICollection<GetMachineContainerModel>>(containers);
+
+
+                return Ok(models);
+            }
+            catch
+            {
+
+                return BadRequest();
+            }
+        }
+
         [HttpGet("user")]
         public IActionResult GetAllUserContainers()
         {
