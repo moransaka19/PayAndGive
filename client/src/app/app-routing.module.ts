@@ -7,7 +7,7 @@ import { AddMachineComponent } from './machines/add-machine/add-machine.componen
 import { MachineDetailsComponent } from './machines/machine-details/machine-details.component';
 import { MachinesComponent } from './machines/machines.component';
 import { RegisterComponent } from './register/register.component';
-import {BackupComponent} from "./backup/backup.component";
+import {BackupComponent} from './backup/backup.component';
 
 
 const routes: Routes = [
@@ -45,7 +45,7 @@ const routes: Routes = [
     component: AddEatComponent
   },
   {
-    path: 'backup/backup',
+    path: 'backup',
     component: BackupComponent
   }
 ];

@@ -17,7 +17,7 @@ import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import { BackupComponent } from './backup/backup.component';
+import {BackupComponent} from './backup/backup.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
