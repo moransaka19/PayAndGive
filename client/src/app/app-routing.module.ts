@@ -8,7 +8,7 @@ import {MachineDetailsComponent} from './machines/machine-details/machine-detail
 import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
-import {BackupComponent} from './backup/backup.component';
+import {AdminComponent} from "./admin/admin.component";
 
 const routes: Routes = [
   {
@@ -45,8 +45,8 @@ const routes: Routes = [
     component: AddEatComponent
   },
   {
-    path: 'backup',
-    component: BackupComponent
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: 'report',
