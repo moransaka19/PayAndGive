@@ -8,10 +8,7 @@ import {MachineDetailsComponent} from './machines/machine-details/machine-detail
 import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
-import {BackupDatabaseComponent} from './backup-database/backup-database.component';
-import {AdminComponent} from './admin/admin.component';
-
-
+import {BackupComponent} from './backup/backup.component';
 
 const routes: Routes = [
   {
@@ -48,12 +45,8 @@ const routes: Routes = [
     component: AddEatComponent
   },
   {
-    path: 'backup-database',
-    component: BackupDatabaseComponent
-  },
-  {
-    path: 'admin',
-    component: AdminComponent
+    path: 'backup',
+    component: BackupComponent
   },
   {
     path: 'report',
