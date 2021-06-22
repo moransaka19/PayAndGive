@@ -13,5 +13,6 @@ namespace Domain
         public int MachineId { get; set; }
         public Machine Machine { get; set; }
         public bool ReadyForOpen { get; set; }
+        public string CountryName { get; set; }
     }
 }

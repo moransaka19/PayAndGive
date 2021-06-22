@@ -11,5 +11,6 @@ namespace Server.Models.Containers
         public int MachineId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public string CountryName { get; set; }
     }
 }

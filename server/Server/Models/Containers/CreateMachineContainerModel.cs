@@ -9,6 +9,7 @@ namespace Server.Models.Containers
     {
         public DateTime FixedLoadingTime { get; set; }
         public bool IsEmpty { get; set; }
+        public string CountryName { get; set; }
         public int EatId { get; set; }
         public int MachineId { get; set; }
     }
