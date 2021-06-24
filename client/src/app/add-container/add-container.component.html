@@ -17,5 +17,11 @@
         </select>
     </div>
 
+  <div class="form-group mb-3">
+    <select required class="form-control" formControlName="countryName">
+      <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+    </select>
+  </div>
+
     <button class="btn btn-success" type="submit" (click)="onAddContainer()">{{'ADD_MACHINE' | translate}}</button>
 </form>

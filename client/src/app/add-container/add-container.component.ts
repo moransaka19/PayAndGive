@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import {countries} from '../../assets/countries';
 
 @Component({
   templateUrl: './add-container.component.html',
@@ -14,10 +15,13 @@ export class AddContainerComponent implements OnInit {
   eats$: Observable<any>;
 
   form: FormGroup;
+  countries: string[];
 
   constructor(private http: HttpClient,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {
+    this.countries = JSON.parse(countries).map(x => x.name);
+  }
 
   ngOnInit(): void {
     this.eats$ = this.http.get(`${environment.apiUrl}/eats`);
@@ -26,7 +30,8 @@ export class AddContainerComponent implements OnInit {
       fixedLoadingTime: new FormControl(),
       isEmpty: new FormControl(false),
       machineId: new FormControl(this.route.snapshot.params.id),
-      eatId: new FormControl()
+      eatId: new FormControl(),
+      countryName: new FormControl()
     });
   }
 

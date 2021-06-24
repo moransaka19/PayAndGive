@@ -85,6 +85,21 @@ namespace Server.Controllers
             }
         }
 
+        [HttpGet("map/{name}")]
+        public IActionResult GetAllContainerForMap(string name)
+        {
+            try
+            {
+                var containers = _machineService.GetAllSoldContainersForMap(name);
+
+                return Ok(containers);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpGet("user")]
         public IActionResult GetAllUserContainers()
         {

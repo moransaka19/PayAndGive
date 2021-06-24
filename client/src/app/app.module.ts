@@ -18,7 +18,9 @@ import {AddEatComponent} from './add-eat/add-eat.component';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {ReportComponent} from './report/report.component';
-import { AdminComponent } from './admin/admin.component';
+import {AdminComponent} from './admin/admin.component';
+import {RateMapComponent} from './rate-map/rate-map.component';
+import {GoogleChartsModule} from 'angular-google-charts';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
     AddContainerComponent,
     AddEatComponent,
     ReportComponent,
-    AdminComponent
+    AdminComponent,
+    RateMapComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
+    GoogleChartsModule.forRoot({mapsApiKey: 'AIzaSyC6GLNUTWdUBmzdhP_NUo0enSWtRrLB3zg'}),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

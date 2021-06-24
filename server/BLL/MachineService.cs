@@ -10,10 +10,13 @@ namespace BLL
     public class MachineService
     {
         private readonly MachineRepository _machineRepository;
+        private readonly MachineContainerRepository _machineContainerRepository;
 
-        public MachineService(MachineRepository machineRepository)
+        public MachineService(MachineRepository machineRepository,
+            MachineContainerRepository machineContainerRepository)
         {
             _machineRepository = machineRepository;
+            _machineContainerRepository = machineContainerRepository;
         }
 
         public IEnumerable<MContainer> GetAllContainers(int id)
@@ -24,6 +27,18 @@ namespace BLL
         public IEnumerable<MContainer> GetAllSoldMachineContainers(int id)
         {
             return _machineRepository.GetById(id).MachineContainers.Where(mc => mc.IsDeleted == true);
+        }
+
+        public IEnumerable<object> GetAllSoldContainersForMap(string name)
+        {
+            return _machineContainerRepository.GetAll(c => c.IsDeleted && c.Eat.Name == name)
+                .GroupBy(c => c.CountryName,
+                    c => c.Eat.Price,
+                    (country, price) => new
+                    {
+                        country,
+                        price = price.Sum()
+                    });
         }
     }
 }

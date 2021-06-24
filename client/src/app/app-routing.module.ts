@@ -9,6 +9,7 @@ import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
 import {AdminComponent} from "./admin/admin.component";
+import {RateMapComponent} from "./rate-map/rate-map.component";
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'report',
     component: ReportComponent
+  },
+  {
+    path: 'rate-map',
+    component: RateMapComponent
   }
 ];
 
