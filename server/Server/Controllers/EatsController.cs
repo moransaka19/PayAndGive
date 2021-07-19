@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BLL;
 using DAL.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Http;
@@ -15,27 +16,38 @@ namespace Server.Controllers
     [ApiController]
     public class EatsController : ControllerBase
     {
-        private readonly EatRepository _eatRepository;
+        private readonly EatService _eatService;
         private readonly IMapper _mapper;
 
-        public EatsController(EatRepository eatRepository,
+        public EatsController(EatService eatService,
             IMapper mapper)
         {
-            _eatRepository = eatRepository;
+            _eatService = eatService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(_eatRepository.GetAll());
+            try
+            {
+                var eats = _eatService.GetAllEats();
+
+                return Ok(eats);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error: Eats not found");
+                
+            }
+
         }
 
         [HttpPost]
         public IActionResult AddEat([FromBody] AddEatModel model)
         {
             var eat = _mapper.Map<Eat>(model);
-            _eatRepository.Add(eat);
+            _eatService.CreateEat(eat);
 
             return Ok();
         }
