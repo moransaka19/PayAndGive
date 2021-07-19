@@ -1,23 +1,23 @@
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+    {{'SELECT_MACHINE' | translate}}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" *ngFor="let machine of machines$ | async" (click)="onSelectMachine(machine.id)">{{machine.id}}</a>
   </div>
 </div>
 
-<button *ngIf="machineId" class="btn btn-primary" (click)="onDownloadPdf()">Download pdf</button>
+<button *ngIf="machineId" class="btn btn-primary" (click)="onDownloadPdf()">{{"DOWNLOAD_PDF" | translate}}</button>
 
 <div *ngIf="machineId" id="report">
-  <h2>Machine Id: {{machineId}}</h2>
+  <h2>{{"MACHINE_ID" | translate}}: {{machineId}}</h2>
 
   <table class="table table-sm">
     <thead>
     <tr>
-      <th scope="col">Container</th>
-      <th scope="col">Eat</th>
-      <th scope="col">Price</th>
+      <th scope="col">{{"CONTAINER" | translate}}</th>
+      <th scope="col">{{"EAT" | translate}}</th>
+      <th scope="col">{{"PRICE" | translate}}</th>
     </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@
     </tr>
     <tr>
       <td></td>
-      <td>Full price</td>
+      <td>{{"FULL_PRICE" | translate}}</td>
       <td>{{getContainersSumPrice(containers$ | async)}}</td>
     </tr>
     </tbody>

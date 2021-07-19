@@ -11,7 +11,7 @@ namespace Domain
         public string Login { get; set; }
         public string Password { get; set; }
         [Encrypted]
-        public decimal? Money { get; set; }
+        public decimal Money { get; set; }
         public Role Role { get; set; }
         public int RoleId { get; set; }
     }

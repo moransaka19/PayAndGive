@@ -8,11 +8,7 @@ import com.example.mobile.models.container.Container
 
 class ContainerAdapter(private val containers: List<Container>) :
     RecyclerView.Adapter<ContainerHolder>() {
-    var list: List<Container>
-
-    init {
-        list = containers
-    }
+    var checkedContainers: ArrayList<Container> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContainerHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -25,17 +21,14 @@ class ContainerAdapter(private val containers: List<Container>) :
     }
 
     override fun onBindViewHolder(holder: ContainerHolder, position: Int) {
-        val container = list[position]
-        holder.bind(container, ::onItemChecked)
-    }
+        val container = checkedContainers[position]
 
-    fun onItemChecked(container: Container) {
-        list = list.map {
-            if (it == container) {
-                container.copy(isAdded = true)
+        holder.containerIdTextView.text = container.id.toString()
+        holder.containerEatTextView.text = container.name
+        holder.containerPriceTextView.text = container.price.toString()
 
-            } else it
-        }
-        notifyDataSetChanged()
+        holder.containerBookCheckBox.setOnClickListener({
+            checkedContainers.add(container)
+        })
     }
 }

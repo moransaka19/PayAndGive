@@ -10,8 +10,8 @@ namespace DAL
 {
     public class ApplicationDbContext : DbContext
     {
-        private readonly byte[] _encryptionKey = AesProvider.GenerateKey(AesKeySize.AES128Bits).Key;
-        private readonly byte[] _encryptionIV = AesProvider.GenerateKey(AesKeySize.AES128Bits).IV;
+        private readonly byte[] _encryptionKey = { 253, 122, 245, 97, 4, 223, 128, 147, 131, 135, 67, 75, 31, 140, 241, 160 };
+        private readonly byte[] _encryptionIV = { 253, 122, 245, 97, 4, 223, 128, 147, 131, 135, 67, 75, 31, 140, 241, 160 };
         private readonly IEncryptionProvider _provider;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

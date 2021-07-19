@@ -1,9 +1,9 @@
-<button class="btn btn-success" (click)="onBackup()">Backup</button>
+<button class="btn btn-success" (click)="onBackup()">{{'CREATE_BACKUP' | translate}}</button>
 
 <br>
 <select class="form-select" #select>
-  <option selected>Select a backup</option>
+  <option selected>{{'SELECT_BACKUP' | translate}}</option>
   <option *ngFor="let backup of backups$ | async" [value]="backup">{{backup}}</option>
 </select>
 
-<button class="btn btn-danger" (click)="onRestore(select.value)">Restore</button>
+<button class="btn btn-danger" (click)="onRestore(select.value)">{{'RESTORE_DB' | translate}}</button>

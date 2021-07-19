@@ -13,12 +13,12 @@ class ContainerHolder(
     layoutInflater: LayoutInflater,
     parent: ViewGroup
 ) : RecyclerView.ViewHolder(
-    layoutInflater.inflate(R.layout.list_container_item, parent, false)
+    layoutInflater.inflate(R.layout.machine_container_item, parent, false)
 ) {
-    private var containerIdTextView: TextView = itemView.findViewById(R.id.container_id_text)
-    private var containerEatTextView: TextView = itemView.findViewById(R.id.container_eat_text)
-    private var containerPriceTextView: TextView = itemView.findViewById(R.id.container_price_text)
-    private var containerBookCheckBox: CheckBox =
+    var containerIdTextView: TextView = itemView.findViewById(R.id.container_id_text)
+    var containerEatTextView: TextView = itemView.findViewById(R.id.container_eat_text)
+    var containerPriceTextView: TextView = itemView.findViewById(R.id.container_price_text)
+    var containerBookCheckBox: CheckBox =
         itemView.findViewById(R.id.container_book_checkbox)
 
     private lateinit var container: Container
@@ -28,11 +28,6 @@ class ContainerHolder(
         containerIdTextView.text = this.container.id.toString()
         containerEatTextView.text = this.container.name
         containerPriceTextView.text = this.container.price.toString()
-        containerBookCheckBox.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener() { buttonView, isChecked ->
-            {
-                container
-            }
-        })
     }
 
 }

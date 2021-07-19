@@ -20,6 +20,17 @@
   "EMPTY": "Empty",
   "LOADING_TIME": "Loading time",
   "ADD_CONTAINER": "Add container",
-  "IS_EMPTY": "Is empty"
-
+  "IS_EMPTY": "Is empty",
+  "STATISTIC": "Statistic",
+  "BACKUP": "Backup",
+  "REPORT": "Report",
+  "CREATE_BACKUP": "Create backup",
+  "RESTORE_DB": "Restore Database",
+  "SELECT_BACKUP": "Select backup file",
+  "SELECT_MACHINE": "Select machine",
+  "DOWNLOAD_PDF": "Download PDF",
+  "MACHINE_ID": "Machine Id",
+  "FULL_PRICE": "Full price",
+  "CONTAINER": "Container",
+  "SELECT_EAT": "Select eat"
 }

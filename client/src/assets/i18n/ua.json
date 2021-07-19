@@ -20,5 +20,17 @@
   "EMPTY": "Пусто",
   "LOADING_TIME": "Час загрузки",
   "ADD_CONTAINER": "Додати контейнер",
-  "IS_EMPTY": "Пустий?"
+  "IS_EMPTY": "Пустий?",
+  "STATISTIC": "Статистика",
+  "BACKUP": "Бекап",
+  "REPORT": "Звіт",
+  "CREATE_BACKUP": "Створити бекап",
+  "RESTORE_DB": "Відновити базу даних",
+  "SELECT_BACKUP": "Оберіть бекап файл",
+  "SELECT_MACHINE": "Оберіть автомат",
+  "DOWNLOAD_PDF": "Скачати у PDF фотматі",
+  "MACHINE_ID": "Номер автомата",
+  "FULL_PRICE": "Повна ціна",
+  "CONTAINER": "Контейнер",
+  "SELECT_EAT": "Оберіть їжу"
 }

@@ -9,9 +9,7 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class ContainerController(private val token: String) {
-    private val BASE_URL = "https://e8be73c05a76.ngrok.io"
-
+class ContainerController(private val token: String) : BaseController()  {
     private val containerService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())

@@ -28,12 +28,10 @@ namespace BLL
         {
             return _userRepository.GetAll(u => u.Login == login).FirstOrDefault() != null;
         }
-
         public bool IsNameTaken(string name)
         {
             return _userRepository.GetAll(u => u.Name == name).FirstOrDefault() != null;
         }
-
         public User Register(string login, string name, string password, RoleEnum roleEnum)
         {
             var hashPassword = HashPassword(password);
@@ -43,14 +41,14 @@ namespace BLL
                 Login = login,
                 Name = name,
                 Password = hashPassword,
-                Role = role
+                Role = role,
+                Money = 0
             };
 
             _userRepository.Add(user);
 
             return user;
         }
-
         public User Authenticate(User model)
         {
             var user = _userRepository.GetAll(x => x.Login == model.Login)
@@ -60,7 +58,6 @@ namespace BLL
 
             return Crypto.VerifyHashedPassword(user.Password, model.Password) ? user : null;
         }
-
         private string HashPassword(string rawPassword)
         {
             return Crypto.HashPassword(rawPassword);
@@ -72,6 +69,11 @@ namespace BLL
         public User GetById(int id)
         {
             return _userRepository.GetById(id);
+        }
+        public void AddMoney(User model, decimal money)
+        {
+            model.Money += money;
+            _userRepository.Update(model);
         }
     }
 }

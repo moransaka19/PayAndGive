@@ -10,9 +10,7 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class ReceiptController(private val token: String) {
-    private val BASE_URL = "https://e8be73c05a76.ngrok.io"
-
+class ReceiptController(private val token: String) : BaseController() {
     private val receiptService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
@@ -25,7 +23,7 @@ class ReceiptController(private val token: String) {
         .create(ReceiptsAPI::class.java)
 
     fun addReceipt(callback: Callback<Unit>, model: AddReceiptModel) {
-        val call: Call<List<Container>> = receiptService.(id)
+        val call: Call<Unit> = receiptService.addReceipt(model)
 
         call.enqueue(callback)
     }

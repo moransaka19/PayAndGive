@@ -14,8 +14,7 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class UserController(private val sharedPref: SharedPreferences) {
-    private val BASE_URL = "https://payandgive.azurewebsites.net/"
+class UserController(private val sharedPref: SharedPreferences) : BaseController()  {
     private val token = sharedPref.getString("AccessToken", String()) ?: ""
 
     private val userService = Retrofit.Builder()

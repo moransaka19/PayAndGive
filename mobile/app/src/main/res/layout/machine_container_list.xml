@@ -12,11 +12,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp" />
 
-    <FrameLayout
-        android:id="@+id/container_fragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/machine_container_recycle_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/machine_spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/machine_spinner"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buy_button"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="@string/buy"
+        android:layout_below="@+id/machine_container_recycle_view"
+        android:layout_centerHorizontal="true"
         />
 
 </RelativeLayout>

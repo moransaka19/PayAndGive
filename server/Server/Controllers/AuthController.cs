@@ -39,6 +39,7 @@ namespace Server
         [HttpPost("registration")]
         public IActionResult Registration([FromBody] RegisterModel model)
         {
+            
             if (_userService.IsLoginTaken(model.Login))
             {
                 return BadRequest(new ErrorMessageModel()
@@ -80,6 +81,7 @@ namespace Server
             return Ok(accessToken);
         }
 
+        //TODO: Remove this endpoint
         [HttpGet("current")]
         public IActionResult GetCurrentUser()
         {
@@ -92,36 +94,6 @@ namespace Server
             }
 
             return Ok(_userService.GetCurrentUser(_tokenService.GetCurrentToken(requestAccessToken)));
-        }
-
-        [AllowAnonymous]
-        [HttpPost("is-login-taken")]
-        public bool IsLoginTaken([FromBody] IsLoginTakenModel model)
-        {
-            return _userService.IsLoginTaken(model.Login);
-        }
-
-        [HttpGet("logout")]
-        public IActionResult Logout()
-        {
-            Response.Cookies.Delete("accessToken");
-
-            return Ok();
-        }
-
-        [HttpPost("add-money")]
-        public IActionResult AddMoney([FromBody] AddMoneyModel model)
-        {
-            var user = _userService.GetById(model.UserId);
-            if (user.Money == null)
-            {
-                user.Money = 0;
-            }
-
-            user.Money += model.Money;
-            _userRepository.Update(user);
-
-            return Ok();
         }
     }
 }

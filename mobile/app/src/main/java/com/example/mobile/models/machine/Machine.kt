@@ -1,8 +1,10 @@
-package com.example.mobile.models.container
+package com.example.mobile.models.machine
+
+import com.example.mobile.models.container.Container
 
 class Machine(
-    id: Int,
-    state: String,
-    value: Int,
-    containers: List<Container>
+    val id: Int,
+    val state: String,
+    val value: Int,
+    val containers: List<Container>
 )
