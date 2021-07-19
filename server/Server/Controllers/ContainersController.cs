@@ -39,7 +39,7 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public IActionResult GetContainerById(int id)
         {
-            var container = _machineContainerRepository.GetById(id);
+            var container = _machineService.GetContainerById(id);
 
             return Ok(container);
         }
@@ -48,7 +48,7 @@ namespace Server.Controllers
         public IActionResult CreateMachineContainer([FromBody] CreateMachineContainerModel model)
         {
             var container = _mapper.Map<MContainer>(model);
-            _machineContainerRepository.Add(container);
+            _machineService.AddContainer(container);
 
             return Ok();
         }
@@ -65,7 +65,7 @@ namespace Server.Controllers
             }
             catch
             {
-                return BadRequest();
+                return BadRequest("Error: Containers not found");
             }
         }
 
@@ -81,22 +81,7 @@ namespace Server.Controllers
             }
             catch
             {
-                return BadRequest();
-            }
-        }
-
-        [HttpGet("map/{name}")]
-        public IActionResult GetAllContainerForMap(string name)
-        {
-            try
-            {
-                var containers = _machineService.GetAllSoldContainersForMap(name);
-
-                return Ok(containers);
-            }
-            catch
-            {
-                return BadRequest();
+                return BadRequest("Error: Containers not found");
             }
         }
 
@@ -105,21 +90,18 @@ namespace Server.Controllers
         {
             try
             {
-
+                //TODO: Create new service for this
                 var userId = int.Parse(HttpContext.User
                     .Claims.First(c => c.Type == JwtRegisteredClaimNames.Sub)
                     .Value);
-
-                var user = _userRepository.GetById(userId);
-                var userContainers = _receiptRepository.GetAll(r => r.User == user)
-                    .SelectMany(r => r.Containers);
-
-                return Ok(userContainers);
+                var containers = _machineService.GetAllUserContainers(userId);
+               
+                return Ok(containers);
             }
             catch
             {
 
-                return BadRequest();
+                return BadRequest("Error: User's containers not found or user do not make purchase yet");
             }
         }
 
