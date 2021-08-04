@@ -17,11 +17,8 @@ namespace Server.Controllers
     [ApiController]
     public class ContainersController : ControllerBase
     {
-        private readonly MachineContainerRepository _machineContainerRepository;
         private readonly IMapper _mapper;
         private readonly MachineService _machineService;
-        private readonly UserRepository _userRepository;
-        private readonly ReceiptRepository _receiptRepository;
 
         public ContainersController(MachineContainerRepository machineContainerRepository,
             IMapper mapper,

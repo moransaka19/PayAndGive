@@ -17,31 +17,36 @@ namespace Server.Controllers
     [Route("api/machines")]
     public class MachineController : Controller
     {
-        private readonly PurchaseService _purchaseService;
-        private readonly UserRepository _userRepository;
         private readonly MachineContainerRepository _machineContainerRepository;
         private readonly MachineRepository _machineRepository;
+        private readonly MachineService _machineService;
         private readonly IMapper _mapper;
 
-        public MachineController(PurchaseService purchaseService,
-            UserRepository userRepository,
-            MachineContainerRepository machineContainerRepository,
+        public MachineController(MachineContainerRepository machineContainerRepository,
             MachineRepository machineRepository,
-            IMapper mapper)
+            IMapper mapper, MachineService machineService)
         {
-            _purchaseService = purchaseService;
-            _userRepository = userRepository;
             _machineContainerRepository = machineContainerRepository;
             _machineRepository = machineRepository;
             _mapper = mapper;
+            _machineService = machineService;
         }
 
         [HttpGet]
         public IActionResult GetMachines()
         {
-            var machines = _mapper.Map<IEnumerable<MachineModel>>(_machineRepository.GetAll());
+            try
+            {
+                var machines = _machineService.GetAllMachines();
+                //TODO: Remove this mapping
+                var machineModels = _mapper.Map<IEnumerable<MachineModel>>(machines);
 
-            return Ok(machines);
+                return Ok(machineModels);
+            }
+            catch
+            {
+                return BadRequest("Error: Machines not found");
+            }
         }
 
         [HttpGet("not-deleted")]
@@ -63,19 +68,14 @@ namespace Server.Controllers
         [HttpGet("{id}")]
         public IActionResult GetMachineById(int id)
         {
-            var machine = _mapper.Map<MachineModel>(_machineRepository.GetById(id));
+            var machine = _machineService.GetMachineById(id);
+            //TODO: Remove this mapping
+            var machineModel = _mapper.Map<MachineModel>(machine);
 
-            return Ok(machine);
+            return Ok(machineModel);
         }
 
-        [HttpGet("not-deleted/{id}")]
-        public IActionResult GetNotDeletedMachineContainersById(int id)
-        {
-            var machine = _mapper.Map<MachineModel>(_machineRepository.GetById(id));
-
-            return Ok(machine);
-        }
-
+        //TODO: Think about it
         [AllowAnonymous]
         [HttpGet("{id}/containers")]
         public IActionResult GetNotProcessedMachines(int id)
@@ -95,7 +95,7 @@ namespace Server.Controllers
         public IActionResult AddMachine([FromBody] AddMachineModel model)
         {
             var machine = _mapper.Map<Machine>(model);
-            _machineRepository.Add(machine);
+            _machineService.AddMachine(machine);
 
             return Ok();
         }
