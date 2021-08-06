@@ -66,9 +66,9 @@ namespace BLL
 
 			return containers;
 		}
-		public IEnumerable<object> GetAllSoldContainersForMap(string name)
+		public IEnumerable<object> GetAllSoldContainersForGoogleMap(int id)
 		{
-			return _machineContainerRepository.GetAll(c => c.IsDeleted && c.Eat.Name == name)
+			return _machineContainerRepository.GetAll(c => c.IsDeleted && c.Eat.Id == id)
 				.GroupBy(c => c.CountryName,
 					c => c.Eat.Price,
 					(country, price) => new

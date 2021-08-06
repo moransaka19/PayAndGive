@@ -4,7 +4,7 @@
     {{"SELECT_EAT" | translate}}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" *ngFor="let eat of eats$ | async" (click)="onSelectEat(eat.name)">{{eat.name}}</a>
+    <a class="dropdown-item" *ngFor="let eat of eats$ | async" (click)="onSelectEat(eat.id)">{{eat.name}}</a>
   </div>
 </div>
 <div >

@@ -20,17 +20,11 @@ namespace Server.Controllers
         private readonly IMapper _mapper;
         private readonly MachineService _machineService;
 
-        public ContainersController(MachineContainerRepository machineContainerRepository,
-            IMapper mapper,
-            MachineService machineService,
-            UserRepository userRepository,
-            ReceiptRepository receiptRepository)
+        public ContainersController(IMapper mapper,
+            MachineService machineService)
         {
-            _machineContainerRepository = machineContainerRepository;
             _mapper = mapper;
             _machineService = machineService;
-            _userRepository = userRepository;
-            _receiptRepository = receiptRepository;
         }
 
         [HttpGet("{id}")]
@@ -80,6 +74,14 @@ namespace Server.Controllers
             {
                 return BadRequest("Error: Containers not found");
             }
+        }
+
+        [HttpGet("google-map/{id}")]
+        public IActionResult GetAllContainersForGoogleMap(int id)
+        {
+            var eats = _machineService.GetAllSoldContainersForGoogleMap(id);
+
+            return Ok(eats);
         }
 
         [HttpGet("user")]

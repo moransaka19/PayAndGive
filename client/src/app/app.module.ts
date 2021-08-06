@@ -47,7 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GoogleChartsModule.forRoot({mapsApiKey: 'AIzaSyC6GLNUTWdUBmzdhP_NUo0enSWtRrLB3zg'}),
+    GoogleChartsModule.forRoot({mapsApiKey: 'AIzaSyBL4bREvpGuhrkcLeaEgBM5I_cdlKMJRlM'}),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

@@ -8,8 +8,8 @@ import {MachineDetailsComponent} from './machines/machine-details/machine-detail
 import {AddContainerComponent} from './add-container/add-container.component';
 import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
-import {AdminComponent} from "./admin/admin.component";
-import {RateMapComponent} from "./rate-map/rate-map.component";
+import {AdminComponent} from './admin/admin.component';
+import {RateMapComponent} from './rate-map/rate-map.component';
 
 const routes: Routes = [
   {
