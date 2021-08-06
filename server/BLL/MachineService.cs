@@ -27,6 +27,29 @@ namespace BLL
 		{
 			return _machineRepository.GetAll();
 		}
+		public IEnumerable<Machine> GetNotDeletedMachines()
+        {
+			return _machineRepository.GetAll(m => m.MachineContainers.Any(x => !x.IsDeleted))
+				.ToList()
+				.Select(x =>
+				{
+					x.MachineContainers = x.MachineContainers.Where(z => !z.IsDeleted);
+
+					return x;
+				});
+		}
+		public IEnumerable<MContainer> GetNotProcessedMachines(int id)
+        {
+			var containers = _machineContainerRepository.GetAll(x => x.MachineId == id && x.ReadyForOpen).ToList();
+
+			containers.ForEach(x =>
+			{
+				x.ReadyForOpen = false;
+				_machineContainerRepository.Update(x);
+			});
+
+			return containers;
+		}
 		public IEnumerable<MContainer> GetAllContainers(int id)
 		{
 			return _machineRepository.GetById(id).MachineContainers.Where(mc => mc.IsDeleted == false);

@@ -52,14 +52,7 @@ namespace Server.Controllers
         [HttpGet("not-deleted")]
         public IActionResult GetNotDeletedMachines()
         {
-            var machines = _machineRepository.GetAll(m => m.MachineContainers.Any(x => !x.IsDeleted))
-                .ToList()
-                .Select(x =>
-                {
-                    x.MachineContainers = x.MachineContainers.Where(z => !z.IsDeleted);
-
-                    return x;
-                });
+            var machines =_machineService.GetNotDeletedMachines();
             var result = _mapper.Map<IEnumerable<MachineModel>>(machines);
 
             return Ok(result);
@@ -80,13 +73,7 @@ namespace Server.Controllers
         [HttpGet("{id}/containers")]
         public IActionResult GetNotProcessedMachines(int id)
         {
-            var containers = _machineContainerRepository.GetAll(x => x.MachineId == id && x.ReadyForOpen).ToList();
-            
-            containers.ForEach(x =>
-            {
-                x.ReadyForOpen = false;
-                _machineContainerRepository.Update(x);
-            });
+            var containers = _machineService.GetNotProcessedMachines(id);
 
             return Ok(_mapper.Map<ContainerModel[]>(containers));
         }
