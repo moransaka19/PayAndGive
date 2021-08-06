@@ -80,20 +80,5 @@ namespace Server
 
             return Ok(accessToken);
         }
-
-        //TODO: Remove this endpoint
-        [HttpGet("current")]
-        public IActionResult GetCurrentUser()
-        {
-            if (!(Request.Headers.TryGetValue("Authorization", out var requestAccessToken)))
-            {
-                return Unauthorized(new ErrorMessageModel()
-                {
-                    Message = "Token is not valid"
-                });
-            }
-
-            return Ok(_userService.GetCurrentUser(_tokenService.GetCurrentToken(requestAccessToken)));
-        }
     }
 }

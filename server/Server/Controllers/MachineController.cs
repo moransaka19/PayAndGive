@@ -1,14 +1,9 @@
 ﻿using AutoMapper;
 using BLL;
-using DAL.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models.Machine;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
@@ -17,17 +12,12 @@ namespace Server.Controllers
     [Route("api/machines")]
     public class MachineController : Controller
     {
-        private readonly MachineContainerRepository _machineContainerRepository;
-        private readonly MachineRepository _machineRepository;
         private readonly MachineService _machineService;
         private readonly IMapper _mapper;
 
-        public MachineController(MachineContainerRepository machineContainerRepository,
-            MachineRepository machineRepository,
-            IMapper mapper, MachineService machineService)
+        public MachineController(IMapper mapper,
+            MachineService machineService)
         {
-            _machineContainerRepository = machineContainerRepository;
-            _machineRepository = machineRepository;
             _mapper = mapper;
             _machineService = machineService;
         }
