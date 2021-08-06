@@ -2,6 +2,7 @@
 using DAL;
 using DAL.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -62,9 +63,11 @@ namespace BLL
         {
             return Crypto.HashPassword(rawPassword);
         }
-        public User GetCurrentUser(JwtSecurityToken token)
+        public User GetCurrentUser(HttpContext http)
         {
-            return _userRepository.GetById(Convert.ToInt32(token.Claims.First(claim => claim.Type == "sub").Value));
+            return _userRepository.GetById(int.Parse(http.User
+                .Claims.First(c => c.Type == JwtRegisteredClaimNames.Sub)
+                .Value));
         }
         public User GetById(int id)
         {
