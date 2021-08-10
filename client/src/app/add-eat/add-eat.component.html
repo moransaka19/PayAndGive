@@ -1,10 +1,10 @@
 <form class="w-50" [formGroup]="form">
     <div class="input-group mb-3">
-        <input class="form-control" required type="text" formControlName="name" name="trip-start" placeholder="Name">
+        <input class="form-control" required type="text" formControlName="name" name="trip-start" placeholder="{{'NAME' | translate}}">
     </div>
 
     <div class="input-group mb-3">
-        <input class="form-control" required type="number" formControlName="price" name="trip-start" placeholder="Price">
+        <input class="form-control" required type="number" formControlName="price" name="trip-start" placeholder="{{'PRICE' | translate}}">
     </div>
 
     <div class="input-group mb-3">

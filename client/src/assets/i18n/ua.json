@@ -32,5 +32,6 @@
   "MACHINE_ID": "Номер автомата",
   "FULL_PRICE": "Повна ціна",
   "CONTAINER": "Контейнер",
-  "SELECT_EAT": "Оберіть їжу"
+  "SELECT_EAT": "Оберіть їжу",
+  "NAME": "Ім'я"
 }

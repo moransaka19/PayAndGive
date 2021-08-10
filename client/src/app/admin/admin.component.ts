@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-admin',
@@ -15,18 +15,18 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.backups$ = this.http.get<string[]>(`${environment.apiUrl}/admin/backups`);
+    this.backups$ = this.http.get<string[]>(`${environment.apiUrl}/backups`);
   }
 
   onBackup() {
-    this.http.post(`${environment.apiUrl}/admin/backup`, null)
+    this.http.post(`${environment.apiUrl}/backups`, null)
       .subscribe(x => {
-        this.backups$ = this.http.get<string[]>(`${environment.apiUrl}/admin/backups`);
+        this.backups$ = this.http.get<string[]>(`${environment.apiUrl}/backups`);
       });
   }
 
   onRestore(value: string) {
-    this.http.post(`${environment.apiUrl}/admin/restore/${value}`, null)
+    this.http.post(`${environment.apiUrl}/backups/restore/${value}`, null)
       .subscribe();
   }
 }

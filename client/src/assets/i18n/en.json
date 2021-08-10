@@ -32,5 +32,6 @@
   "MACHINE_ID": "Machine Id",
   "FULL_PRICE": "Full price",
   "CONTAINER": "Container",
-  "SELECT_EAT": "Select eat"
+  "SELECT_EAT": "Select eat",
+  "NAME": "Name"
 }
