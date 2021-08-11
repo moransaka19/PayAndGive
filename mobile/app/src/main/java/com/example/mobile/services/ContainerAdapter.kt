@@ -21,14 +21,11 @@ class ContainerAdapter(private val containers: List<Container>) :
     }
 
     override fun onBindViewHolder(holder: ContainerHolder, position: Int) {
-        val container = checkedContainers[position]
+        val container = containers[position]
 
         holder.containerIdTextView.text = container.id.toString()
         holder.containerEatTextView.text = container.name
         holder.containerPriceTextView.text = container.price.toString()
-
-        holder.containerBookCheckBox.setOnClickListener({
-            checkedContainers.add(container)
-        })
+        holder.containerBookCheckBox.isChecked = false
     }
 }

@@ -21,7 +21,7 @@ interface UsersAPI {
     @POST("/api/auth/register")
     fun register(@Body model: RegisterModel): Call<AccessTokenModel>
 
-    @POST("/api/auth/add-money")
+    @POST("/api/user/add-money")
     fun addMoney(@Body model: MoneyModel): Call<Unit>
 
     @POST("/api/machines/2/make-purchase")
