@@ -80,5 +80,13 @@ namespace Server
 
             return Ok(accessToken);
         }
+
+        [HttpGet("current")]
+        public IActionResult GetCurrentUser()
+        {
+            var user = _userService.GetCurrentUser(HttpContext);
+
+            return Ok(user);
+        }
     }
 }

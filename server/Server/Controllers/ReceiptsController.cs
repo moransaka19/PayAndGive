@@ -23,7 +23,8 @@ namespace Server.Controllers
         [HttpPost]
         public IActionResult AddReceipt([FromBody] AddReceiptModel model)
         {
-            _receiptService.AddReceipt(model.MachineId, model.UserId, model.ContainersId);
+            var user = _userService.GetCurrentUser(HttpContext);
+            _receiptService.AddReceipt(model.MachineId, user, model.ContainersId);
 
             return Ok();
         }

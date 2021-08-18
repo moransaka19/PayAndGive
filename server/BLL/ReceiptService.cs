@@ -9,6 +9,7 @@ namespace BLL
 {
     public class ReceiptService
     {
+        private readonly UserService _userService;
         private readonly ReceiptRepository _receiptRepository;
         private readonly MachineRepository _machineRepository;
         private readonly MachineContainerRepository _machineContainerRepository;
@@ -16,7 +17,7 @@ namespace BLL
         private readonly EatRepository _eatRepository;
         private readonly PurchaseService _purchaseService;
 
-        public ReceiptService(PurchaseService purchaseService, EatRepository eatRepository, UserRepository userRepository, MachineContainerRepository machineContainerRepository, MachineRepository machineRepository, ReceiptRepository receiptRepository)
+        public ReceiptService(PurchaseService purchaseService, EatRepository eatRepository, UserRepository userRepository, MachineContainerRepository machineContainerRepository, MachineRepository machineRepository, ReceiptRepository receiptRepository, UserService userService)
         {
             _purchaseService = purchaseService;
             _eatRepository = eatRepository;
@@ -24,12 +25,12 @@ namespace BLL
             _machineContainerRepository = machineContainerRepository;
             _machineRepository = machineRepository;
             _receiptRepository = receiptRepository;
+            _userService = userService;
         }
 
-        public void AddReceipt(int machineId, int userId, ICollection<int> containerIds)
+        public void AddReceipt(int machineId, User user, ICollection<int> containerIds)
         {
             var machine = _machineRepository.GetById(machineId);
-            var user = _userRepository.GetById(userId);
             var machineContainers = containerIds
                 .Select(mci => _machineContainerRepository.GetById(mci)).ToList();
 

@@ -42,7 +42,7 @@ class Login : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val token = response.body()?.token;
                         sharedPref.edit().putString("AccessToken", token).apply()
-                        val intent = Intent(context, MainActivity::class.java)
+                        val intent = Intent(context, Profile::class.java)
                         startActivity(intent)
                     }
                 }

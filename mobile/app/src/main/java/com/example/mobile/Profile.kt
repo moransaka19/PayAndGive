@@ -31,14 +31,15 @@ class Profile : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<CurrentUserModel>, response: Response<CurrentUserModel>) {
-                if (response.isSuccessful) {
+                if (response.code() == 200) {
                     val model = response.body()
 
                     profile_login_text.text = model!!.login
                     profile_name_text.text = model.name
                     profile_money_text.text = model.money.toString()
                 }
-                else{
+
+                if (response.code() == 401){
                     val intent = Intent(context, Login::class.java)
                     startActivity(intent)
                 }
