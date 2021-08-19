@@ -24,7 +24,7 @@ namespace Server.Controllers
         public IActionResult AddReceipt([FromBody] AddReceiptModel model)
         {
             var user = _userService.GetCurrentUser(HttpContext);
-            _receiptService.AddReceipt(model.MachineId, user, model.ContainersId);
+            _receiptService.AddReceipt(user, model.ContainersId);
 
             return Ok();
         }

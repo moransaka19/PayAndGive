@@ -28,13 +28,12 @@ namespace BLL
             _userService = userService;
         }
 
-        public void AddReceipt(int machineId, User user, ICollection<int> containerIds)
+        public void AddReceipt(User user, ICollection<int> containerIds)
         {
-            var machine = _machineRepository.GetById(machineId);
             var machineContainers = containerIds
                 .Select(mci => _machineContainerRepository.GetById(mci)).ToList();
 
-            _purchaseService.MakePurchase(machineContainers, user, machine);
+            _purchaseService.MakePurchase(machineContainers, user);
         }
 
         public Receipt GetReceiptById(int id)

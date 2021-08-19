@@ -80,7 +80,7 @@ class MachineContainerActivity() : AppCompatActivity() {
         buy_button.setOnClickListener {
             val containers =
                 ((machine_container_recycle_view.adapter) as ContainerAdapter).checkedContainers.map { it.id }
-            val addReceiptModel = AddReceiptModel(selecdedMachineId, containers)
+            val addReceiptModel = AddReceiptModel(containers)
 
             val receiptController = ReceiptController(token)
             receiptController.addReceipt(object : Callback<Unit> {

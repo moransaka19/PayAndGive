@@ -7,7 +7,6 @@ namespace Server.Models.Receipt
 {
     public class AddReceiptModel
     {
-        public int MachineId { get; set; }
         public ICollection<int> ContainersId{ get; set; }
     }
 }

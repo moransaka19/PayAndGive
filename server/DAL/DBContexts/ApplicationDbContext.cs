@@ -49,6 +49,7 @@ namespace DAL
                     Login = "Admin",
                     Password = "ADGjgVNFqMy8qsaVNwuhPyW96mam0F6+zuAgkLjiNTc7YFfz4zoo4YWk7qnFTCciPg==",
                     Name = "Admin",
+                    Money = 0,
                     RoleId = 1
                 }
             });

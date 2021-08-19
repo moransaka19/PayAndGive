@@ -61,8 +61,9 @@ namespace BLL
 		public IEnumerable<MContainer> GetAllUserContainers(int userId)
 		{
 			var user = _userRepository.GetById(userId);
-			var containers = _receiptRepository.GetAll(r => r.User == user)
-					.SelectMany(r => r.Containers);
+			var containers = _receiptRepository.GetAll()
+				.Where(r => r.User == user)
+				.Select(r => r.Container);
 
 			return containers;
 		}
