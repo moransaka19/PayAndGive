@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using AutoMapper;
+using BLL;
 using Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +17,13 @@ namespace Server.Controllers
     {
         private readonly PreorderService _preorderService;
         private readonly UserService _userService;
+        private readonly IMapper _mapper;
 
-        public PreordersController(PreorderService preorderService, UserService userService)
+        public PreordersController(PreorderService preorderService, UserService userService, IMapper mapper)
         {
             _preorderService = preorderService;
             _userService = userService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -34,7 +37,8 @@ namespace Server.Controllers
         public IActionResult GetAllUserPreorders()
         {
             var user = _userService.GetCurrentUser(HttpContext);
-            var userPreorders = _preorderService.GetAllUserPreorders(user.Id);
+            var userPreorders = _mapper.Map<IEnumerable<UserPreorder>>(_preorderService.GetAllUserPreorders(user.Id));
+
 
             return Ok(userPreorders);
         }

@@ -62,4 +62,13 @@
         android:layout_alignLeft="@+id/go_add_money"
         android:layout_alignStart="@+id/go_add_money"
         />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_preorders"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="Preorders"
+        android:layout_below="@+id/go_make_purchase"
+        android:layout_alignLeft="@+id/go_add_money"
+        android:layout_alignStart="@+id/go_add_money"
+        />
 </RelativeLayout>

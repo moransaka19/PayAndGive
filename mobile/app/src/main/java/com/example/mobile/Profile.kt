@@ -55,5 +55,10 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, MachineContainerActivity::class.java)
             startActivity(intent)
         }
+
+        go_preorders.setOnClickListener{
+            val intent = Intent(this, Preorders::class.java)
+            startActivity(intent)
+        }
     }
 }

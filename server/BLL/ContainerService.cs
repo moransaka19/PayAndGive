@@ -38,6 +38,7 @@ namespace BLL
 
         public IEnumerable<Container> GetAllSoldContainersForMap()
         {
+            //var restaurant = _restaurant.GetAll();
             return _containerRepository.GetAll(c => c.IsBought);
         }
     }

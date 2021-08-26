@@ -11,7 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobile">
-        <activity android:name=".MachineContainerActivity"></activity>
+        <activity
+            android:name=".AddPreorder"
+            android:exported="true" />
+        <activity
+            android:name=".Preorders"
+            android:exported="true" />
+        <activity
+            android:name=".Recalls"
+            android:exported="true" />
+        <activity android:name=".MachineContainerActivity" />
         <activity android:name=".AddMoneyActivity" />
         <activity android:name=".Profile" />
         <activity android:name=".Register" />
