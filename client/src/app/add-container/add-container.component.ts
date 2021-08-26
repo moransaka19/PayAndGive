@@ -27,8 +27,7 @@ export class AddContainerComponent implements OnInit {
     this.eats$ = this.http.get(`${environment.apiUrl}/eats`);
 
     this.form = new FormGroup({
-      fixedLoadingTime: new FormControl(),
-      isEmpty: new FormControl(false),
+      createdTime: new FormControl(),
       machineId: new FormControl(this.route.snapshot.params.id),
       eatId: new FormControl(),
       countryName: new FormControl()

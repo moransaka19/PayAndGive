@@ -6,13 +6,8 @@ namespace Domain
 {
     public class Machine : BaseEntity
     {
-        public string State { get; set; }
         public int Value { get; set; }
-        public IEnumerable<MContainer> MachineContainers { get; set; }
-
-        public Machine()
-        {
-            MachineContainers = new List<MContainer>();
-        }
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
     }
 }

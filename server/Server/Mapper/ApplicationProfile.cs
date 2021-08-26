@@ -4,11 +4,8 @@ using Server.Models;
 using Server.Models.Containers;
 using Server.Models.Eats;
 using Server.Models.Machine;
-using Server.Models.Receipt;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Server.Models.Recalls;
+using Server.Models.Restaurants;
 
 namespace Server.Mapper
 {
@@ -16,27 +13,13 @@ namespace Server.Mapper
     {
         public ApplicationProfile()
         {
-            CreateMap<LoginModel, User>()
-                .ReverseMap();
-            CreateMap<RegisterModel, User>()
-                .ReverseMap();
-            CreateMap<AddMachineModel, Machine>()
-                .ReverseMap();
-            CreateMap<CreateMachineContainerModel, MContainer>()
-                .ReverseMap();
-            CreateMap<AddEatModel, Eat>()
-                .ReverseMap();
-            CreateMap<AddReceiptModel, Receipt>()
-                .ReverseMap();
-
-            CreateMap<Machine, MachineModel>()
-                .ForMember(x => x.Containers, opt => opt.MapFrom(x => x.MachineContainers));
-            CreateMap<MContainer, ContainerModel>();
-            CreateMap<MContainer, GetMachineContainerModel>()
-                .ForMember(dst => dst.Name, opt => opt.MapFrom(src => src.Eat.Name))
-                .ForMember(dst => dst.Price, opt => opt.MapFrom(src => src.Eat.Price));
-
-            CreateMap<Eat, EatModel>();
+            CreateMap<LoginModel, User>();
+            CreateMap<RegisterModel, User>();
+            CreateMap<AddRestaurantModel, Restaurant>();
+            CreateMap<AddMachineModel, Machine>();
+            CreateMap<AddContainerModel, Container>();
+            CreateMap<AddEatModel, Eat>();
+            CreateMap<AddRecallModel, Recall>();
         }
     }
 }

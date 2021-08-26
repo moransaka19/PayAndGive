@@ -33,7 +33,6 @@
         android:layout_alignLeft="@+id/profile_login_text"
         android:layout_marginTop="25sp"/>
 
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/profile_role_name_text"
         android:layout_width="200sp"

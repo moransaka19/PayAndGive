@@ -8,6 +8,6 @@ namespace Domain
     {
         public string Name { get; set; }
         public int Price { get; set; }
-        public int TimeExpiredMin { get; set; }
+        public int TimeExpired { get; set; }
     }
 }

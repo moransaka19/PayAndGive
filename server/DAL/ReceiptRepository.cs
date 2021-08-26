@@ -9,12 +9,16 @@ namespace DAL.Interfaces
 {
     public class ReceiptRepository : BaseRepository<Receipt>
     {
-        protected override IQueryable<Receipt> BaseQuery => base.BaseQuery.Include(bq => bq.User)
-            .Include(bq => bq.Container)
-            .ThenInclude(bq => bq.Eat);
+        protected override IQueryable<Receipt> BaseQuery => base.BaseQuery;
         public ReceiptRepository(ApplicationDbContext context) : base(context)
         {
 
+        }
+
+        public IEnumerable<Receipt> GetAllReceiptWithContainer()
+        {
+            BaseQuery.Include(r => r.Container);
+            return BaseQuery.ToList();
         }
     }
 }

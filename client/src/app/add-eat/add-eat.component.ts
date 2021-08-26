@@ -19,7 +19,7 @@ export class AddEatComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl(),
       price: new FormControl(),
-      timeExpiredMin: new FormControl()
+      timeExpired: new FormControl()
     });
   }
 

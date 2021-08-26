@@ -14,5 +14,12 @@ namespace DAL.Interfaces
         {
         }
 
+        public void Delete(int id)
+        {
+            var user = GetById(id);
+            user.IsDeleted = true;
+            Update(user);
+        }
+
     }
 }

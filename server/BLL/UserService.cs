@@ -25,6 +25,14 @@ namespace BLL
             _roleRepository = roleRepository;
         }
 
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _userRepository.GetAll();
+        }
+        public void DeleteUser(int id)
+        {
+            _userRepository.Delete(id);
+        }
         public bool IsLoginTaken(string login)
         {
             return _userRepository.GetAll(u => u.Login == login).FirstOrDefault() != null;
@@ -33,7 +41,7 @@ namespace BLL
         {
             return _userRepository.GetAll(u => u.Name == name).FirstOrDefault() != null;
         }
-        public User Register(string login, string name, string password, RoleEnum roleEnum)
+        public User Register(string login, string name, string password, DateTime dob, RoleEnum roleEnum)
         {
             var hashPassword = HashPassword(password);
             var role = _roleRepository.GetRole(roleEnum);
@@ -42,8 +50,9 @@ namespace BLL
                 Login = login,
                 Name = name,
                 Password = hashPassword,
-                Role = role,
-                Money = 0
+                DOB = dob,
+                Money = 0,
+                Role = role
             };
 
             _userRepository.Add(user);
@@ -52,7 +61,7 @@ namespace BLL
         }
         public User Authenticate(User model)
         {
-            var user = _userRepository.GetAll(x => x.Login == model.Login)
+            var user = _userRepository.GetAll(x => x.Login == model.Login && !x.IsDeleted)
                .SingleOrDefault();
 
             if (user == null) return null;

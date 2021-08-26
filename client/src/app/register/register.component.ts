@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
     this.form = new FormGroup({
       login: new FormControl(''),
       password: new FormControl(''),
+      dob: new FormControl(''),
       name: new FormControl(''),
       role: new FormControl('Customer'),
     });

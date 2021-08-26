@@ -20,10 +20,13 @@
           <a class="nav-link" routerLink="rate-map">{{'STATISTIC' | translate}}</a>
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link" routerLink="machines">{{ 'MACHINES' | translate}}</a>
+          <a class="nav-link" routerLink="restaurants">{{ 'RESTAURANTS' | translate}}</a>
         </li>
         <li class="nav-item" *ngIf="authenticated">
           <a class="nav-link" routerLink="eat/add">{{ 'ADD_EAT' | translate }}</a>
+        </li>
+        <li class="nav-item" *ngIf="authenticated">
+          <a class="nav-link" routerLink="google-map">{{ "MAP" }}</a>
         </li>
       </ul>
     </div>

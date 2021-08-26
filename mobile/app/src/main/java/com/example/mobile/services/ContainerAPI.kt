@@ -8,6 +8,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ContainerAPI {
-    @GET("/api/containers/machines/{id}")
+    @GET("/api/containers/not-sold-machines/{id}")
     fun GetAllMachineContainers(@Path("id") id: Int): Call<List<Container>>
 }

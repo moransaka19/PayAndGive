@@ -12,9 +12,10 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface UsersAPI {
+    @GET("/api/users/2")
+    fun getUser(): Call<CurrentUserModel>
     @GET("/api/auth/current")
     fun getCurrentUser(): Call<CurrentUserModel>
-
     @POST("/api/auth/login")
     fun login(@Body model: LoginModel): Call<AccessTokenModel>
 

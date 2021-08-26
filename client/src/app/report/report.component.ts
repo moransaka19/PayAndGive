@@ -28,7 +28,7 @@ export class ReportComponent implements OnInit {
   }
 
   getContainersSumPrice(containers: any[]) {
-    return containers?.map(x => x.price).reduce((a, b) => a + b, 0);
+    return containers?.map(x => x.eat.price).reduce((a, b) => a + b, 0);
   }
 
   onDownloadPdf() {

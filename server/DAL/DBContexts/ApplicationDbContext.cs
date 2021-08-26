@@ -49,8 +49,22 @@ namespace DAL
                     Login = "Admin",
                     Password = "ADGjgVNFqMy8qsaVNwuhPyW96mam0F6+zuAgkLjiNTc7YFfz4zoo4YWk7qnFTCciPg==",
                     Name = "Admin",
+                    DOB = DateTime.Now,
                     Money = 0,
+                    IsDeleted = false,
                     RoleId = 1
+                    
+                }
+            });
+            modelBuilder.Entity<Restaurant>().HasData(new[]
+            {
+                new Restaurant
+                {
+                    Id = 1,
+                    Name = "Test",
+                    Lat = -25.363,
+                    Lang = 131.044,
+                    Country = "Ukraine"
                 }
             });
             modelBuilder.Entity<Machine>().HasData(new[]
@@ -58,24 +72,24 @@ namespace DAL
                 new Machine
                 {
                     Id = 1,
-                    State = "test",
                     Value = 20,
+                    RestaurantId = 1
                 }
             });
-            modelBuilder.Entity<MContainer>().HasData(new[]
+            modelBuilder.Entity<Container>().HasData(new[]
             {
-                new MContainer
+                new Container
                 {
                     Id = 1,
                     MachineId = 1,
-                    IsDeleted = false,
+                    IsBought = false,
                     EatId = 2
                 },
-                new MContainer
+                new Container
                 {
                     Id = 2,
                     MachineId = 1,
-                    IsDeleted = false,
+                    IsBought = false,
                     EatId = 1
                 }
             });
@@ -87,14 +101,14 @@ namespace DAL
                     Id = 2,
                     Name ="Eat2",
                     Price = 2,
-                    TimeExpiredMin = 5
+                    TimeExpired = 5
                 },
                 new Eat 
                 {
                     Id = 1,
                     Name = "Eat1",
                     Price = 10,
-                    TimeExpiredMin = 10
+                    TimeExpired = 10
                 }
             });
 
@@ -108,6 +122,10 @@ namespace DAL
         public DbSet<Machine> Machines { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
-        public DbSet<MContainer> Containers { get; set; }
+        public DbSet<Container> Containers { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Preorder> Preorders{ get; set; }
+        public DbSet<BonusEat> BonusEats { get; set; }
+        public DbSet<Recall> Recalls { get; set; }
     }
 }

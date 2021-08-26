@@ -1,10 +1,9 @@
-<ng-container *ngIf="machine$ | async as machine">
-    <h2>Id: {{machine.id}}</h2>
+<ng-container *ngIf="containers$ | async as machines">
+    <h2>Id: {{machineId}}</h2>
 
-    <div><b>{{'STATE' | translate}}: </b> {{machine.state}}</div>
-    <div><b>{{'VALUE' | translate}}: </b> {{machine.value}}</div>
+    <div><b>{{'VALUE' | translate}}: </b> {{machines.value}}</div>
 
-    <button class="btn btn-success" routerLink="./add-container" *ngIf="machine.containers.length < machine.value">
+    <button class="btn btn-success" routerLink="./add-container">
       {{'ADD_CONTAINER' | translate}}
     </button>
 
@@ -17,16 +16,14 @@
                 <th scope="col">{{'EAT' | translate}}</th>
                 <th scope="col">{{'PRICE' | translate}}</th>
                 <th scope="col">{{'LOADING_TIME' | translate}}</th>
-                <th scope="col">{{'EMPTY' | translate}}</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let machine of machine.containers">
+            <tr *ngFor="let machine of machines">
                 <th scope="row">{{machine.id}}</th>
                 <td>{{machine.eat.name}}</td>
                 <td>{{machine.eat.price}}</td>
-                <td>{{machine.fixedLoadingTime | date : 'short'}}</td>
-                <td>{{machine.isDeleted}}</td>
+                <td>{{machine.createdTime | date : 'short'}}</td>
             </tr>
         </tbody>
     </table>

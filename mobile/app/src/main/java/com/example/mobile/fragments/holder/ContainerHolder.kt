@@ -26,8 +26,8 @@ class ContainerHolder(
     fun bind(container: Container, callback: (Container) -> Unit) {
         this.container = container
         containerIdTextView.text = this.container.id.toString()
-        containerEatTextView.text = this.container.name
-        containerPriceTextView.text = this.container.price.toString()
+        containerEatTextView.text = this.container.eat.name
+        containerPriceTextView.text = this.container.eat.price.toString()
     }
 
 }

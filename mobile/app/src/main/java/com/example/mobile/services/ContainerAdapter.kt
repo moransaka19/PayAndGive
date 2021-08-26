@@ -24,8 +24,8 @@ class ContainerAdapter(private val containers: List<Container>) :
         val container = containers[position]
 
         holder.containerIdTextView.text = container.id.toString()
-        holder.containerEatTextView.text = container.name
-        holder.containerPriceTextView.text = container.price.toString()
+        holder.containerEatTextView.text = container.eat.name
+        holder.containerPriceTextView.text = container.eat.price.toString()
         holder.containerBookCheckBox.isChecked = false
         holder.containerBookCheckBox.setOnClickListener {
             checkedContainers.add(container)

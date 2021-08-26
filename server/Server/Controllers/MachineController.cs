@@ -23,51 +23,33 @@ namespace Server.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetMachines()
+        public IActionResult GetAllMachines()
         {
             try
             {
                 var machines = _machineService.GetAllMachines();
-                //TODO: Remove this mapping
-                var machineModels = _mapper.Map<IEnumerable<MachineModel>>(machines);
 
-                return Ok(machineModels);
+                return Ok(machines);
             }
             catch
             {
                 return BadRequest("Error: Machines not found");
             }
         }
-
-        [HttpGet("not-deleted")]
-        public IActionResult GetNotDeletedMachines()
+        [HttpGet("restaurant/{id}")]
+        public IActionResult GetAllRestaurantMachines(int id)
         {
-            var machines =_machineService.GetNotDeletedMachines();
-            var result = _mapper.Map<IEnumerable<MachineModel>>(machines);
+            var machines = _machineService.GetAllRestaurantMachines(id);
 
-            return Ok(result);
+            return Ok(machines);
         }
-
         [HttpGet("{id}")]
         public IActionResult GetMachineById(int id)
         {
             var machine = _machineService.GetMachineById(id);
-            //TODO: Remove this mapping
-            var machineModel = _mapper.Map<MachineModel>(machine);
 
-            return Ok(machineModel);
+            return Ok(machine);
         }
-
-        //TODO: Think about it
-        [AllowAnonymous]
-        [HttpGet("{id}/containers")]
-        public IActionResult GetNotProcessedMachines(int id)
-        {
-            var containers = _machineService.GetNotProcessedMachines(id);
-
-            return Ok(_mapper.Map<ContainerModel[]>(containers));
-        }
-
         [HttpPost]
         public IActionResult AddMachine([FromBody] AddMachineModel model)
         {

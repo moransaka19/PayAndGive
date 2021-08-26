@@ -19,67 +19,49 @@ namespace DAL.Migrations
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.Eat", b =>
+            modelBuilder.Entity("Domain.BonusEat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TimeExpiredMin")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Eats");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 2,
-                            Name = "Eat2",
-                            Price = 2,
-                            TimeExpiredMin = 5
-                        },
-                        new
-                        {
-                            Id = 1,
-                            Name = "Eat1",
-                            Price = 10,
-                            TimeExpiredMin = 10
-                        });
-                });
-
-            modelBuilder.Entity("Domain.MContainer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CountryName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("EatId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("FixedLoadingTime")
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EatId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("BonusEats");
+                });
+
+            modelBuilder.Entity("Domain.Container", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsDeleted")
+                    b.Property<int>("EatId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsBought")
                         .HasColumnType("bit");
 
                     b.Property<int>("MachineId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("ReadyForOpen")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -93,20 +75,55 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EatId = 2,
-                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            MachineId = 1,
-                            ReadyForOpen = false
+                            IsBought = false,
+                            MachineId = 1
                         },
                         new
                         {
                             Id = 2,
+                            CreatedTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EatId = 1,
-                            FixedLoadingTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsDeleted = false,
-                            MachineId = 1,
-                            ReadyForOpen = false
+                            IsBought = false,
+                            MachineId = 1
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Eat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TimeExpired")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Eats");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            Name = "Eat2",
+                            Price = 2,
+                            TimeExpired = 5
+                        },
+                        new
+                        {
+                            Id = 1,
+                            Name = "Eat1",
+                            Price = 10,
+                            TimeExpired = 10
                         });
                 });
 
@@ -117,13 +134,15 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Value")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId");
 
                     b.ToTable("Machines");
 
@@ -131,9 +150,62 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            State = "test",
+                            RestaurantId = 1,
                             Value = 20
                         });
+                });
+
+            modelBuilder.Entity("Domain.Preorder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateTimePreorder")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EatId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EatId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Preorders");
+                });
+
+            modelBuilder.Entity("Domain.Recall", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Recalls");
                 });
 
             modelBuilder.Entity("Domain.Receipt", b =>
@@ -146,6 +218,9 @@ namespace DAL.Migrations
                     b.Property<int>("ContainerId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DateTimeCreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -156,6 +231,40 @@ namespace DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Receipts");
+                });
+
+            modelBuilder.Entity("Domain.Restaurant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Lang")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Lat")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Restaurants");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Country = "Ukraine",
+                            Lang = 131.04400000000001,
+                            Lat = -25.363,
+                            Name = "Test"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Role", b =>
@@ -197,6 +306,12 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("DOB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(max)");
 
@@ -222,6 +337,8 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
+                            DOB = new DateTime(2021, 8, 24, 21, 56, 23, 550, DateTimeKind.Local).AddTicks(8368),
+                            IsDeleted = false,
                             Login = "IEUqJGtlFGBjefSpvP5xug==",
                             Money = 0m,
                             Name = "IEUqJGtlFGBjefSpvP5xug==",
@@ -230,7 +347,26 @@ namespace DAL.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.MContainer", b =>
+            modelBuilder.Entity("Domain.BonusEat", b =>
+                {
+                    b.HasOne("Domain.Eat", "Eat")
+                        .WithMany()
+                        .HasForeignKey("EatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Restaurant", "Restaurant")
+                        .WithMany()
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Eat");
+
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("Domain.Container", b =>
                 {
                     b.HasOne("Domain.Eat", "Eat")
                         .WithMany()
@@ -239,7 +375,7 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Machine", "Machine")
-                        .WithMany("MachineContainers")
+                        .WithMany()
                         .HasForeignKey("MachineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -249,9 +385,58 @@ namespace DAL.Migrations
                     b.Navigation("Machine");
                 });
 
+            modelBuilder.Entity("Domain.Machine", b =>
+                {
+                    b.HasOne("Domain.Restaurant", "Restaurant")
+                        .WithMany()
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("Domain.Preorder", b =>
+                {
+                    b.HasOne("Domain.Eat", "Eat")
+                        .WithMany()
+                        .HasForeignKey("EatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Eat");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Domain.Recall", b =>
+                {
+                    b.HasOne("Domain.Restaurant", "Restaurant")
+                        .WithMany()
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Domain.Receipt", b =>
                 {
-                    b.HasOne("Domain.MContainer", "Container")
+                    b.HasOne("Domain.Container", "Container")
                         .WithMany()
                         .HasForeignKey("ContainerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -277,11 +462,6 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("Domain.Machine", b =>
-                {
-                    b.Navigation("MachineContainers");
                 });
 #pragma warning restore 612, 618
         }

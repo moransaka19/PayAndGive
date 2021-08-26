@@ -25,6 +25,11 @@ class UserController(private val sharedPref: SharedPreferences) : BaseController
         }.build())
         .build()
         .create(UsersAPI::class.java)
+    fun getUser(callback: Callback<CurrentUserModel>) {
+        val call: Call<CurrentUserModel> =
+            userService.getUser()
+        call.enqueue(callback)
+    }
 
     fun getCurrentUser(callback: Callback<CurrentUserModel>) {
         val call: Call<CurrentUserModel> =

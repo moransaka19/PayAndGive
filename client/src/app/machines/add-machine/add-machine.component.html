@@ -1,11 +1,7 @@
 <form class="w-50" [formGroup]="form">
     <div class="form-group mb-3">
-        <select required class="form-control" formControlName="state">
-            <option value="Idle">Idle</option>
-            <option value="Charging">Charging</option>
-            <option value="Loading">Loading</option>
-            <option value="In Transit">In Transit</option>
-            <option value="Canceled">Canceled</option>
+        <select required class="form-control" formControlName="restaurantId">
+            <option *ngFor="let restaurant of restaurants$ | async" [value]="restaurant.id">{{restaurant.name}}</option>
         </select>
     </div>
     <div class="input-group mb-3">

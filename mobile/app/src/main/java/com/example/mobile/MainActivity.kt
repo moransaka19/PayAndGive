@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = this.getSharedPreferences("Authorization", Context.MODE_PRIVATE)
 
         val token = sharedPref.getString("AccessToken", String())
-        if (token != null){
-            val intent = Intent(this, Profile::class.java)
-            startActivity(intent)
-        }
-        else{
+//        if (token != null){
+//            val intent = Intent(this, Profile::class.java)
+//            startActivity(intent)
+//        }
+//        else{
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-        }
+//        }
 
         text.setText(token)
     }

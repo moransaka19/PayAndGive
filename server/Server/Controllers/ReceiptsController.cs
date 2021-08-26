@@ -23,12 +23,10 @@ namespace Server.Controllers
         [HttpPost]
         public IActionResult AddReceipt([FromBody] AddReceiptModel model)
         {
-            var user = _userService.GetCurrentUser(HttpContext);
-            _receiptService.AddReceipt(user, model.ContainersId);
+            _receiptService.AddReceipt(HttpContext, model.ContainersId);
 
             return Ok();
         }
-
         [HttpGet("{id}")]
         public IActionResult GetReceipt(int id)
         {
@@ -36,7 +34,6 @@ namespace Server.Controllers
 
             return Ok(receipt);
         }
-
         [HttpGet("user")]
         public IActionResult GetAllUserReceipts()
         {

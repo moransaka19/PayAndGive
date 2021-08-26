@@ -10,6 +10,10 @@ import {AddEatComponent} from './add-eat/add-eat.component';
 import {ReportComponent} from './report/report.component';
 import {AdminComponent} from './admin/admin.component';
 import {RateMapComponent} from './rate-map/rate-map.component';
+import {GoogleMapComponent} from "./google-map/google-map.component";
+import {RestaurantsComponent} from "./restaurants/restaurants.component";
+import {AddRestaurantComponent} from "./restaurants/add-restaurant/add-restaurant.component";
+import {RestaurantDetailsComponent} from "./restaurants/restaurant-details/restaurant-details.component";
 
 const routes: Routes = [
   {
@@ -56,6 +60,22 @@ const routes: Routes = [
   {
     path: 'rate-map',
     component: RateMapComponent
+  },
+  {
+    path: 'google-map',
+    component: GoogleMapComponent
+  },
+  {
+    path: 'restaurants',
+    component: RestaurantsComponent
+  },
+  {
+    path: 'restaurants/add',
+    component: AddRestaurantComponent
+  },
+  {
+    path: 'restaurants/:id',
+    component: RestaurantDetailsComponent
   }
 ];
 

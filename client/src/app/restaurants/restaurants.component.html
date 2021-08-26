@@ -1,0 +1,20 @@
+<h3>{{'RESTAURANTS' | translate}}</h3>
+
+<button class="btn btn-success" routerLink="/restaurants/add">{{ 'ADD_RESTAURANTS' | translate }}</button>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">{{'NAME' | translate}}</th>
+    <th scope="col">{{'COUNTRY' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr style="cursor: pointer" *ngFor="let restaurant of restaurants$ | async" routerLink="/restaurants/{{restaurant.id}}">
+    <th scope="row">{{restaurant.id}}</th>
+    <td>{{restaurant.name}}</td>
+    <td>{{restaurant.country}}</td>
+  </tr>
+  </tbody>
+</table>

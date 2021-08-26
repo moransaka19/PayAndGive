@@ -1,5 +1,6 @@
 ﻿using DAL.Interfaces;
 using Domain;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,12 @@ namespace BLL
         private readonly UserService _userService;
         private readonly ReceiptRepository _receiptRepository;
         private readonly MachineRepository _machineRepository;
-        private readonly MachineContainerRepository _machineContainerRepository;
+        private readonly ContainerRepository _machineContainerRepository;
         private readonly UserRepository _userRepository;
         private readonly EatRepository _eatRepository;
         private readonly PurchaseService _purchaseService;
 
-        public ReceiptService(PurchaseService purchaseService, EatRepository eatRepository, UserRepository userRepository, MachineContainerRepository machineContainerRepository, MachineRepository machineRepository, ReceiptRepository receiptRepository, UserService userService)
+        public ReceiptService(PurchaseService purchaseService, EatRepository eatRepository, UserRepository userRepository, ContainerRepository machineContainerRepository, MachineRepository machineRepository, ReceiptRepository receiptRepository, UserService userService)
         {
             _purchaseService = purchaseService;
             _eatRepository = eatRepository;
@@ -28,12 +29,12 @@ namespace BLL
             _userService = userService;
         }
 
-        public void AddReceipt(User user, ICollection<int> containerIds)
+        public void AddReceipt(HttpContext http, ICollection<int> containerIds)
         {
             var machineContainers = containerIds
                 .Select(mci => _machineContainerRepository.GetById(mci)).ToList();
 
-            _purchaseService.MakePurchase(machineContainers, user);
+            _purchaseService.MakePurchase(machineContainers, http);
         }
 
         public Receipt GetReceiptById(int id)

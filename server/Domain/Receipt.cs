@@ -6,9 +6,10 @@ namespace Domain
 {
     public class Receipt : BaseEntity
     {
+        public DateTime DateTimeCreated { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public int ContainerId { get; set; }
-        public MContainer Container { get; set; }
+        public Container Container { get; set; }
     }
 }

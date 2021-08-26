@@ -39,7 +39,7 @@ namespace Server
         [HttpPost("registration")]
         public IActionResult Registration([FromBody] RegisterModel model)
         {
-            
+
             if (_userService.IsLoginTaken(model.Login))
             {
                 return BadRequest(new ErrorMessageModel()
@@ -56,7 +56,7 @@ namespace Server
                 });
             }
 
-            var user = _userService.Register(model.Login, model.Name, model.Password, model.Role);  
+            var user = _userService.Register(model.Login, model.Name, model.Password, model.DOB, model.Role);
             var accessToken = new AccessToken() { Token = _tokenService.GenerateJwtToken(user) };
 
             return Ok(accessToken);
@@ -72,7 +72,7 @@ namespace Server
             {
                 return Unauthorized(new ErrorMessageModel()
                 {
-                    Message = "login or password are incorrect"
+                    Message = "login or password are incorrect or user was deleted"
                 });
             }
 

@@ -1,0 +1,12 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Name">
+</div>
+<div class="form-group mb-3">
+  <select required class="form-control" formControlName="countryName">
+    <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+  </select>
+</div>
+<div class="form-group mb-3">
+  <h3>{{coordinates}}</h3>
+  <google-map (mapClick)="click($event)"></google-map>
+</div>

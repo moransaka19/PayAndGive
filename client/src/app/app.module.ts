@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {LoginComponent} from './login/login.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import {HeaderComponent} from './header/header.component';
 import {RegisterComponent} from './register/register.component';
@@ -21,6 +21,11 @@ import {ReportComponent} from './report/report.component';
 import {AdminComponent} from './admin/admin.component';
 import {RateMapComponent} from './rate-map/rate-map.component';
 import {GoogleChartsModule} from 'angular-google-charts';
+import { GoogleMapComponent } from './google-map/google-map.component';
+import {GoogleMapsModule} from "@angular/google-maps";
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { AddRestaurantComponent } from './restaurants/add-restaurant/add-restaurant.component';
+import { RestaurantDetailsComponent } from './restaurants/restaurant-details/restaurant-details.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +44,11 @@ export function createTranslateLoader(http: HttpClient) {
     AddEatComponent,
     ReportComponent,
     AdminComponent,
-    RateMapComponent
+    RateMapComponent,
+    GoogleMapComponent,
+    RestaurantsComponent,
+    AddRestaurantComponent,
+    RestaurantDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     HttpClientModule,
     GoogleChartsModule.forRoot({mapsApiKey: 'AIzaSyBL4bREvpGuhrkcLeaEgBM5I_cdlKMJRlM'}),
+    GoogleMapsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -55,7 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
