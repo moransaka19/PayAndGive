@@ -52,13 +52,22 @@
         android:layout_alignStart="@+id/profile_role_name_text"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/go_restaurants"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="Restaurants"
+        android:layout_below="@+id/go_add_money"
+        android:layout_alignLeft="@+id/go_add_money"
+        android:layout_alignStart="@+id/go_add_money"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/go_make_purchase"
         android:layout_width="200sp"
         android:layout_height="50sp"
-        android:text="@string/make_purchase"
-        android:layout_below="@+id/go_add_money"
+        android:text="Machines"
+        android:layout_below="@+id/go_restaurants"
         android:layout_alignLeft="@+id/go_add_money"
         android:layout_alignStart="@+id/go_add_money"
         />

@@ -51,6 +51,11 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
 
+        go_restaurants.setOnClickListener{
+            val intent = Intent(this, RestaurantsMap::class.java)
+            startActivity(intent)
+        }
+
         go_make_purchase.setOnClickListener{
             val intent = Intent(this, MachineContainerActivity::class.java)
             startActivity(intent)

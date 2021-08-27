@@ -16,8 +16,8 @@ export class RateMapComponent implements OnInit {
   myType = 'GeoChart';
   columnNames = ['City', 'Price'];
   data = [['UA', 1]];
-  width = 800;
-  height = 600;
+  width = 1600;
+  height = 900;
   options: any;
 
   constructor(private http: HttpClient) {

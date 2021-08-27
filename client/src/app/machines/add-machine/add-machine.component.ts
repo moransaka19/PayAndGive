@@ -28,6 +28,6 @@ export class AddMachineComponent implements OnInit {
   onAddMachine() {
 
     this.http.post(`${environment.apiUrl}/machines`, this.form.value)
-      .subscribe(() => this.router.navigateByUrl('/machines'));
+      .subscribe(() => this.router.navigateByUrl('/restaurants'));
   }
 }

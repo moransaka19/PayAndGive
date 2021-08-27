@@ -36,8 +36,13 @@ namespace BLL
             var restaurantRecalls = _recallService.GetAllRestaurantRecalls(id);
             var restaurantRecallsCount = restaurantRecalls.ToList().Count;
             var restaurantRatingsSum = restaurantRecalls.Select(rr => rr.Rating).Sum();
+            var res = 0;
 
-            return restaurantRatingsSum / restaurantRecallsCount;
+            if (restaurantRecallsCount != 0)
+            {
+                res = restaurantRatingsSum / restaurantRecallsCount;
+            }
+            return res;
         }
         public Dictionary<string, int> GetEatGoogleMapModels(int id)
         {

@@ -1,7 +1,7 @@
   <button class="btn btn-success" type="submit"
-          (click)="onAddRestaurant(name,  country)">{{'ADD_RESTAURANT' | translate}}</button>
+          (click)="onAddRestaurant(name,  country)">{{'ADD_RESTAURANTS' | translate}}</button>
   <div class="input-group mb-3">
-    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Name">
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="{{'NAME' | translate}}">
   </div>
   <div class="form-group mb-3">
     <select required class="form-control" [(ngModel)]="country">
@@ -10,5 +10,5 @@
   </div>
   <div class="form-group mb-3">
     <h3>{{coordinates}}</h3>
-    <google-map (mapClick)="click($event)"></google-map>
+    <google-map height="700" width="1100" (mapClick)="click($event)"></google-map>
   </div>

@@ -3,6 +3,7 @@ using BLL;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models.Restaurants;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Server.Controllers
@@ -26,6 +27,24 @@ namespace Server.Controllers
             var restaurants = _restaurantService.GetAllRestaurants();
 
             return Ok(restaurants);
+        }
+        [HttpGet("google-map")]
+        public IActionResult GetAllGoogleMapRestaurants()
+        {
+            var restaurants = _restaurantService.GetAllRestaurants().ToList();
+            var ratingRestaurants = new List<RatingRestaurantModel>();
+            restaurants.ForEach(r =>
+            {
+                ratingRestaurants.Add(new RatingRestaurantModel
+                {
+                    Name = r.Name,
+                    Lang = r.Lang,
+                    Lat = r.Lat,
+                    Rating = _restaurantService.GetRestaurantRating(r.Id)
+                });
+            });
+
+            return Ok(ratingRestaurants);
         }
         [HttpPost]
         public IActionResult AddRestaurant([FromBody] AddRestaurantModel model)

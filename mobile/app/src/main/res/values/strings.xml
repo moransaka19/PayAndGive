@@ -13,4 +13,5 @@
     <string name="buy">buy</string>
     <string name="book" />
     <string name="book1">book</string>
+    <string name="title_activity_restaurants_map">RestaurantsMap</string>
 </resources>

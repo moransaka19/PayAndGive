@@ -48,9 +48,5 @@ class Login : AppCompatActivity() {
                 }
             }, loginModel)
         }
-        go_register_button.setOnClickListener{
-            val intent = Intent(this, Register::class.java)
-            startActivity(intent)
-        }
     }
 }

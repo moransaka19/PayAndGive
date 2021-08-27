@@ -25,6 +25,6 @@ export class AddEatComponent implements OnInit {
 
   onAddEat() {
     this.http.post(`${environment.apiUrl}/eats`, this.form.value)
-      .subscribe(() => this.router.navigateByUrl('/machines'));
+      .subscribe(() => this.router.navigateByUrl('/restaurants'));
   }
 }
