@@ -40,8 +40,8 @@ class Preorders : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val preorders = response.body()!!
-                    preorder_recycler_view.adapter = PreorderAdapter(preorders)
                     preorder_recycler_view.layoutManager = LinearLayoutManager(context)
+                    preorder_recycler_view.adapter = PreorderAdapter(preorders)
                 }
             }
 

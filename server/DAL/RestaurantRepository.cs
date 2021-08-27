@@ -14,5 +14,10 @@ namespace DAL
         {
 
         }
+
+        public ICollection<Restaurant> GetAllRestaurantsWithChild()
+        {
+            return BaseQuery.Include(r => r.Machines).ThenInclude(m => m.Containers).ThenInclude(c => c.Eat).ToList();
+        }
     }
 }

@@ -12,6 +12,7 @@ import com.example.mobile.controllers.EatController
 import com.example.mobile.controllers.PreorderController
 import com.example.mobile.models.container.Eat
 import com.example.mobile.models.preorder.AddPreorderModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_add_preorder.*
 import kotlinx.android.synthetic.main.machine_container_list.*
 import retrofit2.Call
@@ -68,6 +69,8 @@ class AddPreorder : AppCompatActivity() {
                                             response: Response<Unit>
                                         ) {
                                             if (response.isSuccessful) {
+                                                val snackbar = Snackbar.make(it, "Thanks for preorder", Snackbar.LENGTH_LONG)
+                                                snackbar.show()
                                                 val intent = Intent(context, Preorders::class.java)
                                                 startActivity(intent)
                                             }

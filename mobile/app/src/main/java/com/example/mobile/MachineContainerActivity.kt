@@ -10,13 +10,16 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mobile.controllers.BonusController
 import com.example.mobile.controllers.ContainerController
 import com.example.mobile.controllers.MachineController
 import com.example.mobile.controllers.ReceiptController
+import com.example.mobile.models.container.BonusModel
 import com.example.mobile.models.container.Container
 import com.example.mobile.models.machine.Machine
 import com.example.mobile.models.recept.AddReceiptModel
 import com.example.mobile.services.ContainerAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.machine_container_list.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,25 +53,41 @@ class MachineContainerActivity() : AppCompatActivity() {
                     machinesId = response.body()!!.map { it.id }
                     Log.println(Log.INFO, "geting-machines", machines.size.toString())
 
-                    val machinesAdapter =
-                        ArrayAdapter<Int>(context, android.R.layout.simple_spinner_item, machinesId)
-                    machine_spinner.adapter = machinesAdapter
-                    machine_spinner.onItemSelectedListener =
-                        object : AdapterView.OnItemSelectedListener {
-                            override fun onNothingSelected(parent: AdapterView<*>?) {
-                                TODO("Not yet implemented")
-                            }
+                    val bonusController = BonusController(token)
 
-                            override fun onItemSelected(
-                                parent: AdapterView<*>?,
-                                view: View?,
-                                position: Int,
-                                id: Long
-                            ) {
-                                updateContainers(machinesId[position])
-                                selecdedMachineId = position
+                    bonusController.getUserBonus(object : Callback<BonusModel> {
+                        override fun onResponse(
+                            call: Call<BonusModel>,
+                            response: Response<BonusModel>
+                        ) {
+                            if (response.isSuccessful) {
+                                val bonusModel = response.body()!!
+                                val machinesAdapter =
+                                    ArrayAdapter<Int>(context, android.R.layout.simple_spinner_item, machinesId)
+                                machine_spinner.adapter = machinesAdapter
+                                machine_spinner.onItemSelectedListener =
+                                    object : AdapterView.OnItemSelectedListener {
+                                        override fun onNothingSelected(parent: AdapterView<*>?) {
+                                            TODO("Not yet implemented")
+                                        }
+
+                                        override fun onItemSelected(
+                                            parent: AdapterView<*>?,
+                                            view: View?,
+                                            position: Int,
+                                            id: Long
+                                        ) {
+                                            updateContainers(machinesId[position], bonusModel.percentDiscount)
+                                            selecdedMachineId = position
+                                        }
+                                    }
                             }
                         }
+
+                        override fun onFailure(call: Call<BonusModel>, t: Throwable) {
+                            Log.println(Log.DEBUG, "machine-containers", "Fail: ")
+                        }
+                    })
                 }
             }
 
@@ -81,7 +100,8 @@ class MachineContainerActivity() : AppCompatActivity() {
             val containers =
                 ((machine_container_recycle_view.adapter) as ContainerAdapter).checkedContainers.map { it.id }
             val addReceiptModel = AddReceiptModel(containers)
-
+            val snackbar = Snackbar.make(it, "Thanks for purchasing", Snackbar.LENGTH_LONG)
+            snackbar.show()
             val receiptController = ReceiptController(token)
             receiptController.addReceipt(object : Callback<Unit> {
                 override fun onResponse(
@@ -102,7 +122,7 @@ class MachineContainerActivity() : AppCompatActivity() {
         }
     }
 
-    fun updateContainers(id: Int) {
+    fun updateContainers(id: Int, discount: Int) {
 
         containerController.GetAllMachineContainer(object : Callback<List<Container>> {
             override fun onResponse(
@@ -112,7 +132,7 @@ class MachineContainerActivity() : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val containers = response.body()!!
                     machine_container_recycle_view.layoutManager = LinearLayoutManager(context)
-                    machine_container_recycle_view.adapter = ContainerAdapter(containers)
+                    machine_container_recycle_view.adapter = ContainerAdapter(containers, discount)
                 }
             }
 

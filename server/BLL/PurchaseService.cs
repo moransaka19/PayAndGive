@@ -66,12 +66,12 @@ namespace BLL
             var bonusCount = ValideBonusPurchases(userBonusEatContainers);
             var discountPercentBonus = 0;
 
-            if (bonusCount > 3)
+            if (bonusCount >= 3)
             {
                 discountPercentBonus = 5;
             }
 
-            if (bonusCount > 5)
+            if (bonusCount >= 5)
             {
                 discountPercentBonus = 10;
             }

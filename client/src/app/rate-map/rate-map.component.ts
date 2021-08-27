@@ -28,7 +28,7 @@ export class RateMapComponent implements OnInit {
   }
 
   onSelectEat(id) {
-    this.http.get<any[]>(environment.apiUrl + '/containers/sold/' + id)
+    this.http.get<any[]>(environment.apiUrl + '/restaurants/eats-google-chart/' + id)
       .subscribe(c => {
         this.data = c.map(x => {
           console.log([x.country, x.price]);

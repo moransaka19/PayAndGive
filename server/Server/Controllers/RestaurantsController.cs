@@ -3,6 +3,7 @@ using BLL;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models.Restaurants;
+using System.Linq;
 
 namespace Server.Controllers
 {
@@ -51,6 +52,13 @@ namespace Server.Controllers
             };
 
             return Ok(ratingModel);
+        }
+        [HttpGet("eats-google-chart/{id}")]
+        public IActionResult GetAllRestaurantEats(int id)
+        {
+            var eats = _restaurantService.GetEatGoogleMapModels(id);
+            var eatGoogleMapModel = eats.Select(e => new EatCountryPriceModel { Country = e.Key, Price = e.Value });
+            return Ok(eatGoogleMapModel);
         }
     }
 }

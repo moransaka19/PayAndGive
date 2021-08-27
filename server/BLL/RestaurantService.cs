@@ -39,5 +39,27 @@ namespace BLL
 
             return restaurantRatingsSum / restaurantRecallsCount;
         }
+        public Dictionary<string, int> GetEatGoogleMapModels(int id)
+        {
+            return _restaurantRepository.GetAllRestaurantsWithChild().Select(r =>
+            {
+                r.Machines.Select(m =>
+                {
+                    m.Containers = m.Containers.Where(c => c.IsBought);
+
+                    return m;
+                });
+
+                return r;
+            })
+                .GroupBy(r => r.Country)
+                .ToDictionary(x => x.Key, x => x
+                .SelectMany(r => r.Machines)
+                    .SelectMany(m => m.Containers)
+                    .Select(c => c.Eat)
+                    .Where(e => e.Id == id)
+                    .Select(e => e.Price).Sum()
+                    );
+        }
     }
 }
